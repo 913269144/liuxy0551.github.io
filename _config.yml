@@ -13,7 +13,7 @@ timezone: UTC #时区
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://blog.enjoytoshare.club # wugenqiang是我的账号，修改为自己的账号
+url: https://blog.enjoytoshare.club # liuxy0551是我的账号，修改为自己的账号
 root: /
 permalink: article/:urlname.html #:year/:month/:day/:title/
 permalink_defaults:
@@ -92,12 +92,12 @@ deploy:
   repository: https://github.com/liuxy0551/liuxy0551.github.io.git #复制过来
   branch: master
   #repo:
-  #  github: https://github.com/wugenqiang/wugenqiang.github.io.git,master
-  #  coding: https://dev.tencent.com/u/wugenqiang/p/wugenqiang.coding.me.git,master
-  #  gitee: https://gitee.com/wugenqiang/wugenqiang.git,master
+  #  github: https://github.com/liuxy0551/liuxy0551.github.io.git,master
+  #  coding: https://dev.tencent.com/u/liuxy0551/p/liuxy0551.coding.me.git,master
+  #  gitee: https://gitee.com/liuxy0551/liuxy0551.git,master
 
 admin:
-  username: wugenqiang
+  username: liuxy0551
   password_hash: $2a$10$nICUSbzBkXqFMoE.XtSEh.7V6rTdUWKSts.VFoaWTastdl8CvjJQq #你想设置密码生成的bcrypt hash安全密钥
   secret: wgq154326
 
