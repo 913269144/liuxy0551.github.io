@@ -26,9 +26,9 @@ function run() {
 
         echo("======================Auto Backup Begin===========================");
 
-        cd('E:/work/myblog');    //此处修改为Hexo根目录路径
+        cd('/Users/liuxy/Desktop/Projects/Blog/myblog');    //此处修改为Hexo根目录路径
 
-        if (exec('git add --all').code !== 0) {
+        if (exec('git add .').code !== 0) {
 
             echo('Error: Git add failed');
 
@@ -36,7 +36,7 @@ function run() {
 
         }
 
-        if (exec('git commit -am "blog auto backup script\'s commit"').code !== 0) {
+        if (exec('git commit -m "blog"').code !== 0) {
 
             echo('Error: Git commit failed');
 
@@ -44,7 +44,7 @@ function run() {
 
         }
 
-        if (exec('git push origin master').code !== 0) {
+        if (exec('git push origin develop').code !== 0) {
 
             echo('Error: Git push failed');
 
