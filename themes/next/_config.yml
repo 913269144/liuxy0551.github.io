@@ -134,8 +134,8 @@ menu:
   tags: /tags/ || tags #标签
   categories: /categories/ || th #分类
   archives: /archives/ || archive #归档
-  photos: /photos/ || camera  #摄影相册
-  book: /book/ || book #书籍
+  #photos: /photos/ || camera  #摄影相册
+  #book: /book/ || book #书籍
   about: /about/ || user #关于
   love: https://love.enjoytoshare.club/ || heart #告白
   laboratory: /laboratory/ || anchor #实验室
