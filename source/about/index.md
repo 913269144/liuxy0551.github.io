@@ -4,9 +4,9 @@ date: 2019-03-10 00:53:47
 type: "about"
 ---
 
-<img alt="刘先玉" style="width:127px; height:127px; border-radius:50%; overflow:hidden;" src="https://raw.githubusercontent.com/wugenqiang/picGo/master/pictures/003.jpg"/>
+<img alt="刘先玉" style="width:127px; height:127px; border-radius:50%; overflow:hidden;" src="/images/avatar.jpg"/>
 
-Hello，欢迎来到我的个人小站。
+Hello，欢迎来到刘先玉的个人小站。
 
 # 01 关于作者
 

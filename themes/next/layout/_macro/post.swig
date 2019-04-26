@@ -267,6 +267,12 @@
     {#################}
     {### POST BODY ###}
     {#################}
+    <div>
+        {% if not is_index %}
+            <div style="text-align:center;color: #ccc;font-size:14px;">------------- 以 上 -------------</div>
+        {% endif %}
+    </div>
+
     <div class="post-body{% if theme.han %} han-init-context{% endif %}{% if post.direction && post.direction.toLowerCase() === 'rtl' %} rtl{% endif %}" itemprop="articleBody">
 
       {# Gallery support #}
@@ -383,6 +389,7 @@
         <div class="post-tags">
           {% for tag in post.tags %}
             <a href="{{ url_for(tag.path) }}" rel="tag"><i class="fa fa-envira"></i> {{ tag.name }}</a>
+            <!--<a href="{{ url_for(tag.path) }}" rel="tag"><i class="fa fa-tag"></i> {{ tag.name }}</a>-->
           {% endfor %}
         </div>
       {% endif %}

@@ -49,8 +49,8 @@ cache:
 # For example, you put your favicons into `hexo-site/source/images` directory.
 # Then need to rename & redefine them on any other names, otherwise icons from Next will rewrite your custom icons in Hexo.
 favicon:
-  small: /images/favicon-16x16-next.png   #小图标 默认的NexT
-  medium: /images/favicon-32x32-next.png  #中图标 默认NexT
+  small: /images/favicon.png   #小图标 默认的NexT
+  medium: /images/favicon.png  #中图标 默认NexT
   apple_touch_icon: /images/apple-touch-icon-next.png #苹果触摸图标
   safari_pinned_tab: /images/logo.svg   #safari固定标签
   #android_manifest: /images/manifest.json
@@ -62,12 +62,12 @@ favicon:
 rss:
 
 footer:
-  since: 1995
+  since: 2017
   icon:
     name: heart  #设置图标，想修改图标从https://fontawesome.com/v4.7.0/icons获取
     animated: true  #是否要为图标设置动画，默认为false
     color: "#EE0000"  #图标颜色
-  copyright: WuGenQiang  #版权
+  copyright: 刘先玉  #版权
     #powered:
     #enable: true  #是否显示 Hexo link
     #version: true  #是否显示Hexo链接后的Hexo版本信息（vX.X.X）
@@ -94,7 +94,7 @@ creative_commons:
 # Follow me on GitHub banner in right-top corner.
 github_banner:
   enable: false
-  permalink: https://github.com/yourname
+  permalink: https://github.com/liuxy0551
   title: Follow me on GitHub
 
 # ---------------------------------------------------------------
@@ -137,10 +137,10 @@ menu:
   #photos: /photos/ || camera  #摄影相册
   #book: /book/ || book #书籍
   about: /about/ || user #关于
-  love: https://love.enjoytoshare.club/ || heart #告白
+  #love: https://love.enjoytoshare.club/ || heart #告白
   laboratory: /laboratory/ || anchor #实验室
-  notes: /notes || amazon #札记 & 留言板
-  #schedule: /schedule/ || calendar #时间表
+  notes: /notes || calendar #札记 & 留言板
+  #schedule: /schedule/ || amazon #时间表
   #sitemap: /sitemap.xml || sitemap #网站地图
   #commonweal: /404/ || heartbeat #公益
 
@@ -148,16 +148,13 @@ menu:
 #目录设置，如果设置icon: false则无图标，badges: true则标签都会显示数字
 menu_settings:
   icons: true
-  badges: false #默认是false
+  badges: true #默认是false
 
 # ---------------------------------------------------------------
 # Scheme Settings
 # ---------------------------------------------------------------
 
 # Schemes
-#scheme: Muse  #这是 Nex默认版本，黑白主调，大量留白
-#scheme: Mist  #Muse 的紧凑版本，整洁有序的单栏外观
-#scheme: Pisces #双栏 Scheme，小家碧玉似的清新
 scheme: Gemini  #双子座，也是双栏形式，和Pisces类似
 
 
@@ -175,12 +172,13 @@ site_state: true
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
-  GitHub: https://github.com/wugenqiang || github
-  Gitee: https://gitee.com/wugenqiang || gitlab
-  简书: https://www.jianshu.com/u/60afda94ea5a || heartbeat
-  Coding: https://dev.tencent.com/u/wugenqiang || twitter
-  CSDN: https://blog.csdn.net/wugenqiang || git-square
-  #E-Mail: mailto:2422676183@qq.com || envelope
+  GitHub: https://github.com/liuxy0551 || github
+  Gitee: https://gitee.com/liuxy0551 || git
+  Gitlab: http://code.lxkee.com/liuyi || gitlab
+  #简书: https://www.jianshu.com/u/60afda94ea5a || heartbeat
+  #Coding: https://dev.tencent.com/u/wugenqiang || twitter
+  #CSDN: https://blog.csdn.net/wugenqiang || git-square
+  E-Mail: http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=MFxZRUhJAAUFAXBBQR5TX10 || envelope
   #Segmentfault: https://segmentfault.com/blog/iconye_vue || link
   #知乎: https://www.zhihu.com/people/yi-ke-id/activities || ioxhost
   #Google: https://plus.google.com/yourname || google
@@ -201,9 +199,9 @@ social_icons:  #设置图标是否显示这里
 
 # Sidebar Avatar
 avatar:
-  url: /images/fighting_wugenqiang.jpg #/images/avatar.gif  #头像图片路径 图片放置在next/source/images
+  url: /images/avatar.jpg #/images/avatar.gif  #头像图片路径 图片放置在next/source/images
   rounded: true  #是否显示圆形头像，true表示圆形，false默认
-  opacity: 0.7  #透明度0~1之间
+  opacity: 0.9  #透明度0~1之间
   rotated: true  #是否旋转 true表示旋转，false默认
 
 # Table Of Contents in the Sidebar
@@ -256,7 +254,7 @@ back2top:
 scroll_to_more: true
 
 # Automatically saving scroll position on each post / page in cookies.
-save_scroll: false # 是否在Cookie中自动保存每个帖子/页面上的滚动位置。
+save_scroll: true # 是否在Cookie中自动保存每个帖子/页面上的滚动位置。
 
 # Automatically excerpt description in homepage as preamble text.
 excerpt_description: true #是否自动摘录主页中的描述作为前导文本。
@@ -313,7 +311,7 @@ codeblock:
 # Wechat Subscriber
 wechat_subscriber:
   enable: true
-  qcode: https://raw.githubusercontent.com/wugenqiang/PictureBed/master/pictures/wechat_subscriber.jpg
+  qcode: /images/liuxywork.jpeg
   #qcode: /path/to/your/wechatqcode e.g. /uploads/wechat-qcode.jpg
   #description: e.g. subscribe to my blog by scanning my public wechat account
 
@@ -321,14 +319,11 @@ wechat_subscriber:
 # If true, reward would be displayed in every article by default.
 # You can show or hide reward in a specific article throuth `reward: true | false` in Front Matter.
 reward:
-  enable: true
+  enable: false
   #打赏功能
-  comment: 原创技术分享，您的支持将鼓励我继续创作
+  comment: 您的支持将鼓励我继续创作
   wechatpay: /images/wechat.jpg
   alipay: /images/alipay.jpg
-  #comment: Donate comment here
-  #wechatpay: /images/wechatpay.jpg
-  #alipay: /images/alipay.jpg
   #bitcoin: /images/bitcoin.jpg
 
 # Related popular posts
@@ -1069,9 +1064,9 @@ css: css
 js: js
 images: images
 
-# 文章末尾添加“本文结束”标记
+# 文章末尾添加“以 上”标记
 passage_end_tag:
-  enabled: false
+  enabled: true
 
 # 添加共享按钮
 shareto: false
@@ -1095,12 +1090,12 @@ links:     #打开
   # V2EX: https://www.v2ex.com/
   # 印记中文: https://www.v2ex.com/
   # EnjoyToShare: https://wugenqiang.github.io/
-  庞泽琪的博客: https://pangzeqi.github.io/
-  筱林博客: https://x1aolin.com/
-  开源中国: https://my.oschina.net/wugenqiang
-  zhengrenjie's Blog: https://www.jelliclecat.cn
-  个人WiKi资料库: https://wiki.enjoytoshare.club/
-  青果 | 引航: https://enjoytoshare.club/
+  # 庞泽琪的博客: https://pangzeqi.github.io/
+  # 筱林博客: https://x1aolin.com/
+  # 开源中国: https://my.oschina.net/wugenqiang
+  # zhengrenjie's Blog: https://www.jelliclecat.cn
+  # 个人WiKi资料库: https://wiki.enjoytoshare.club/
+  # 青果 | 引航: https://enjoytoshare.club/
 
 index_generator:
   per_page: 6

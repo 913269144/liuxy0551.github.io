@@ -15,7 +15,8 @@ menu:
   book: 书籍
   love: 告白
   laboratory: 实验室
-  notes: 札记 & 留言板
+  notes: 留言板
+  #notes: 札记 & 留言板
   schedule: 日程表
   sitemap: 站点地图
   commonweal: 公益 404
