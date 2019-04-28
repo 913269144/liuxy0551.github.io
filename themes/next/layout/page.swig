@@ -78,7 +78,8 @@
            }
 
            .tag-cloud a:before{
-                content: "📜";
+                content: "";
+                <!--content: "📜";-->
            }
 
            .tag-cloud-tags{
@@ -128,6 +129,3 @@
 {% block script_extra %}
   {% include '_scripts/pages/post-details.swig' %}
 {% endblock %}
-
-
-

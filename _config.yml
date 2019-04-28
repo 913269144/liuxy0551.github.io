@@ -106,10 +106,14 @@ sitemap:
 baidusitemap:
   path: baidusitemap.xml
 
-# hexo-tag-cloud
+# hexo-tag-cloud 滚动标签
 tag_cloud:
   textFont: Trebuchet MS, Helvetica
   textColor: '#fc6423'
   textHeight: 17
   outlineColor: '#b3e5ef'
   maxSpeed: 0.07
+
+# 鼠标选取文字自动提示版权信息
+selectionCopyright:
+  enable: true

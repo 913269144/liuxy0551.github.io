@@ -25,7 +25,7 @@
 }
 
 //文章目录默认展开
-.post-toc .nav { display: block; }
+.post-toc .nav .nav-child { display: block; }
 //目录字体大小调整
 .post-toc ol {
   font-size : 13px;
@@ -79,7 +79,9 @@ Hexo博客NexT主题美化之网站标题栏背景变色
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #49b1f5;
+  margin-top: 1em;
+  top: 2px;
+  background-color: #2593a6;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   -moz-transform: scaleX(0);
@@ -91,3 +93,16 @@ Hexo博客NexT主题美化之网站标题栏背景变色
   transition-delay: 0s;
 }
 
+// 修改按键（button）样式
+.btn {
+  /*color: #49b1f5;
+  background: #fff;
+  border: 2px solid #49b1f5;*/
+  border-radius: 5px;
+}
+// 按键（button）点击时样式
+.btn:hover {
+  /*border-color: #49b1f5;
+  color: #fff;
+  background: #49b1f5;*/
+}

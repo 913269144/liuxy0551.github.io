@@ -1,6 +1,11 @@
 ---
 title: {{ title }}
-date: {{ date }}
+urlname: hexo-do-daovoice
 tags:
-copyright: true
+  -
+categories:
+  -
+author: 刘先玉
+date: {{ date }}
+updated: {{ date }}
 ---
