@@ -1,4 +1,4 @@
-title: Hexo+NexT搭建博客拥抱舒爽
+title: 【目录】Hexo+NexT搭建博客拥抱舒爽
 urlname: hexo-do-optimization
 tags:
   - Hexo
@@ -7,11 +7,10 @@ categories:
   - Hexo
 author: WuGenQiang
 date: 2019-04-15 22:22:22
-updated: 2019-04-15 22:22:27
+updated: 2019-04-27 22:22:27
+summary_img: https://raw.githubusercontent.com/wugenqiang/picGo/master/pictures/20190404142303.png
 ---
-![](https://raw.githubusercontent.com/wugenqiang/picGo/master/pictures/20190404142303.png)
 
-<!--more-->
 
 # 1 写在前面
 
@@ -22,6 +21,8 @@ updated: 2019-04-15 22:22:27
 本文参考的文章都会直接给出原文链接或者以注脚的形式标记出处，如有遗漏，欢迎指出。
 
 本文内容会在后续的优化中慢慢补充完整~~
+
+<!--more-->
 
 首先在配置Hexo+NexT之前，最好阅读一下[Hexo官方文档](https://hexo.io/zh-cn/docs/)和[NexT使用文档](http://theme-next.iissnan.com/getting-started.html)
 
@@ -602,9 +603,134 @@ copyright: true #新增,开启
 </style>
 ```
 就好啦
-# 4 SEO推广
+
+## 3.20 开启文章目录
+点此链接查看：[Hexo博客NexT主题开启文章目录和调整样式](https://blog.enjoytoshare.club/article/hexo-do-catalog.html)
+
+## 3.21 图片点击实现全屏查看
+点此链接查看：[Hexo文章中图片点击实现全屏查看](https://blog.enjoytoshare.club/article/hexo-do-picture-screen.html)
+
+## 3.22 修改内容区域的宽度
+点此链接查看：[Hexo之修改内容区域的宽度](https://blog.enjoytoshare.club/article/hexo-do-edit-screen.html)
+
+## 3.23 DaoVoice实现在线联系
+点此链接查看：[DaoVoice实现在线联系](https://blog.enjoytoshare.club/article/hexo-do-daovoice.html)
+
+## 3.24 打赏功能
+点此链接查看：[Hexo的NexT主题打赏功能](https://blog.enjoytoshare.club/article/hexo-do-donate.html)
+
+## 3.25 加入评论功能gitalk
+点此链接查看：[Hexo NexT 加入评论功能gitalk](https://blog.enjoytoshare.club/article/hexo-do-gitalk.html)
+
+## 3.26 获取网易云音乐外链
+点此链接查看：[Hexo获取网易云音乐外链](https://blog.enjoytoshare.club/article/hexo-do-music-link.html)
+
+## 3.27 开启emoji表情
+如何让 `markdown` 可以解析 `emoji` 呢？实际上我们发现，在编辑器中输入 `:smile:` 并没有表情出现，是为什么呢？
+这是 `markdown` 渲染引擎的问题 ，将 `markdown` 变成 `html` 的转换器叫做`markdown渲染器` 。 Hexo默认是采用 `hexo-renderer-marked` ,这个渲染器不支持插件扩展，当然就不行了，还有一个支持插件扩展的是 `hexo-renderer-markdown-it` ，这个支持插件配置，可以使用 `markwon-it-emoji` 插件来支持emoji。需要将原来的 `marked` 渲染器换成 `markdown-it` 渲染器。所以我们可以使用这个渲染引擎来支持emoji表情。
+
+### 3.27.1 安装新的渲染器
+首先进入博客目录，卸载hexo默认的 `marked` 渲染器，安装 `markdown-it` 渲染器，运行的命令如：
+```
+$ npm un hexo-renderer-marked --save
+$ npm i hexo-renderer-markdown-it --save
+```
+之后安装 `markdown-it-emoji` 插件 ：
+```
+$ npm install markdown-it-emoji --save
+```
+据说 `hexo-renderer-markdown-it` 的速度要比 `Hexo` 原装插件要快，而且功能更多
+
+### 3.27.2 编辑站点配置文件
+这里的站点配置文件是指位于博客根目录下的` _config.yml`，编辑它，然后在末尾添加如下内容：
+```
+# Markdown-it config
+## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki
+markdown:
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: true
+    linkify: true
+    typographer: true
+    quotes: '“”‘’'
+  plugins:
+    - markdown-it-abbr
+    - markdown-it-footnote
+    - markdown-it-ins
+    - markdown-it-sub
+    - markdown-it-sup
+    - markdown-it-emoji  ## add emoji
+  anchors:
+    level: 1
+    collisionSuffix: 'v'
+    # If `true`, creates an anchor tag with a permalink besides the heading.
+    permalink: true  
+    permalinkClass: header-anchor
+    # The symbol used to make the permalink
+    permalinkSymbol: ¶
+```
+说明一下：
+* level：生成 Heading ID 的标题等级
+* collisionSuffix：Heading ID 重复时，数字的后缀
+* permalink：'true'，则创建一个锚标记，除标题外还有一个固定链接
+* permalinkClass：用于固定链接锚标记的样式
+* permalinkSymbol：用于固定链接标记的符号
+
+若想更改 `permalinkSymbol` 里面符号，可以参考：[permalinkSymbol](https://graphemica.com/unicode/characters)
+
+注：如果不想显示 `permalinkSymbol` 的符号，可以改 `permalink: true` 为 `permalink: false` 即可
+
+* html：定义文档中的HTML内容是否应转义或传递给最终结果。
+```
+html: true # 不转义 HTML 内容
+html: false # 转义 HTML 内容，使标签作为文本输出
+```
+* xhtmlOut：定义解析器是否将导出完全兼容XHTML的标记。
+```
+xhtmlOut: true # 必须使用完全的 XHTML 代码，换行必须为 <br/>
+xhtmlOut: false # 不必必使用完全的 XHTML 代码，换行可以为 <br>
+```
+* breaks：使源文件中的换行符被解析为<br>标记。每次按Enter键都会创建换行符。
+```
+breaks: true # 每次会车换行相当于一个 <br/> 标签
+breaks: false # Pa每次会车换行会被忽略
+```
+
+* linkify：解析器能够将直接粘贴到文本中的链接内联。
+```
+linkify: true # 类似链接的文本，作为链接输出
+linkify: false # 类似链接的文本，依然作为文本输出
+```
+
+* typographer：可以替换常见的排版元素。
+```
+typographer: true # 替换常见的排版元素
+typographer: false # 不替换常见的排版元素
+```
+
+* quotes：单引号、双引号如何被替换
+```
+quotes: '“”‘’' # 'single'、"double" 变成 ‘single’、“double”
+quotes: '«»“”' # 'single'、"double" 变成 “single”、«single»
+```
+### 3.27.3 使用方法
+在 [Emoji](https://www.emojicopy.com/) 中找到你想要的表情，然后点击即可复制。
+比如你想发一个笑脸 😄 直接输入笑脸对应的 `emoji` 编码 `:smile:` 就可以。
+
+# 4 自定义域名
+## 4.1 绑定个人域名
+参考博文：[Hexo博客绑定个人域名](https://blog.enjoytoshare.club/article/hexo-do-domain.html)
+
+## 4.2 开启HTTPS
+参考博文：[Hexo博客自定义域名开启HTTPS](https://blog.enjoytoshare.club/article/hexo-do-https.html)
+
+## 4.3 Coding+Github托管Hexo
+参考博文：[Coding+Github双服务器托管Hexo](https://blog.enjoytoshare.club/article/hexo-do-server-hosting.html)
+
+# 5 SEO推广
 刚搭建完博客，可能你会发现你发表的文章在谷歌或者百度都搜索不到，因为需要进行SEO优化的，什么是SEO，顾名思义，SEO即(Search Engine Optimization):汉译为搜索引擎优化，下面来总结一下SEO优化的方法，让自己的博文能在谷歌百度上搜索到。
-## 4.1 生成sitemap
+## 5.1 生成sitemap
 添加站点地图sitemap
 Sitemap用于通知搜索引擎网站上有哪些可供抓取的网页，以便搜索引擎可以更加智能地抓取网站。
 安装sitemap站点地图自动生成插件`hexo-generator-sitemap`和`hexo-generator-baidu-sitemap`，用于生成`sitemap`,在`git Bash`中执行以下命令:
@@ -627,7 +753,7 @@ url: https://blog.enjoytoshare.club
 
 ![](https://raw.githubusercontent.com/wugenqiang/picGo/master/pictures/20190409142957.png)
 
-## 4.2 添加蜘蛛协议
+## 5.2 添加蜘蛛协议
 网站通过`Robots协议`告诉搜索引擎哪些页面可以抓取，哪些页面不能抓取。`robots.txt` 通常存放于网站根目录(public目录)。由于我们每次hexo clean都会清空public，着实不方便，我们都知道source目录下的文件通过hexo g命令会转换成public中的文件，所以为了方便起见，我们把`robots.txt`文件放在`source`目录下，我的 robots.txt 内容为：
 ```
 User-agent: *
@@ -648,7 +774,7 @@ Sitemap: https://blog.enjoytoshare.club/baidusitemap.xml
 ```
 其中Allow后面的就是你的menu 
 请自行将blog.enjoytoshare.club改成自己的域名，然后hexo g提交一下
-## 4.3 打开SEO
+## 5.3 打开SEO
 在主题配置文件`_config.yml`中找到：
 
 ```
@@ -656,14 +782,14 @@ seo: false
 ```
 将其设置为`true`
 
-## 4.4 提交站点到百度
+## 5.4 提交站点到百度
 
-### 4.4.1 开启百度自动推送
+### 5.4.1 开启百度自动推送
 在主题配置文件`_config.yml`中添加如下：
 ```
 baidu_push: true
 ```
-### 4.4.2 将网站链接提交到百度
+### 5.4.2 将网站链接提交到百度
 [百度搜索引擎非验证提交入口](http://www.sousuoyinqingtijiao.com/baidu/tijiao/)
 [正式提交入口](https://ziyuan.baidu.com/site/siteadd)
 
@@ -675,7 +801,7 @@ baidu_push: true
 
 添加后运行hexo d -g将改动提交，然后点击完成验证，通过即可。
 
-### 4.4.3 登录[百度站长平台](https://ziyuan.baidu.com/site/index)
+### 5.4.3 登录[百度站长平台](https://ziyuan.baidu.com/site/index)
 进行链接提交
 添加：
 ![](https://raw.githubusercontent.com/wugenqiang/picGo/master/pictures/20190409154624.png)
@@ -686,15 +812,15 @@ baidu_push: true
 
 ![](https://raw.githubusercontent.com/wugenqiang/picGo/master/pictures/20190409154938.png)
 
-## 4.5 提交站点到Google
+## 5.5 提交站点到Google
 首先保证你要能翻墙出去，连到谷歌，如果没有VPN，可参考下面网址获取：[工具盒子](https://blog.enjoytoshare.club/laboratory/toolBox/index.html)
 
-### 4.5.1 提交博客域名
+### 5.5.1 提交博客域名
 
 打开[Google Search Console](https://www.google.com/webmasters/#?modal_active=none)
 根据提示注册好之后，添加你的博客域名。
 
-### 4.5.2 进行站点验证
+### 5.5.2 进行站点验证
 
 ![](https://raw.githubusercontent.com/wugenqiang/picGo/master/pictures/20190409150421.png)
 我选择了备用方法中的HTML 标记，将给出的元标记复制到\themes\next\layout\ _partials \head\head.swig文件中。
@@ -705,7 +831,7 @@ baidu_push: true
 
 ![](https://raw.githubusercontent.com/wugenqiang/picGo/master/pictures/20190409150748.png)
 
-### 4.5.3 提交站点地图
+### 5.5.3 提交站点地图
 还记得我们刚才创建创建sitemap.xml文件吧,现在它要派上用场了。点击左侧工具栏的站点地图
 
 ![](https://raw.githubusercontent.com/wugenqiang/picGo/master/pictures/20190409151250.png)
@@ -716,9 +842,9 @@ baidu_push: true
 
 ![](https://raw.githubusercontent.com/wugenqiang/picGo/master/pictures/20190409151735.png)
 
-## 4.6 验证站点是否被收录
+## 5.6 验证站点是否被收录
 在搜索引擎搜索框输入`site:your.domain`可以查看域名是否被该搜索引擎收录，用户可以使用各大搜索引擎站长工具提交个人博客网址。
-### 4.6.1 验证谷歌收录
+### 5.6.1 验证谷歌收录
 ```
 site:blog.enjoytoshare.club
 ```
@@ -727,7 +853,7 @@ site:blog.enjoytoshare.club
 
 ![](https://raw.githubusercontent.com/wugenqiang/picGo/master/pictures/20190409165959.png)
 
-### 4.6.2 验证百度收录
+### 5.6.2 验证百度收录
 ```
 site:blog.enjoytoshare.club
 ```
@@ -739,3 +865,9 @@ site:blog.enjoytoshare.club
 今天是2019-04-12，很幸运，今天查看了一下`site:blog.enjoytoshare.club`，发现已经收录了，很开心！nice
 
 ![](https://raw.githubusercontent.com/wugenqiang/PictureBed/master/pictures/20190412142351.png)
+
+
+-----
+到这里，应该博客超级炫了吧哈哈，如果觉得以上操作很多想直接跳过这些配置，可以参考我的博客源码：[myblog](https://github.com/wugenqiang/myblog)
+
+-----

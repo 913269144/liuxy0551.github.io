@@ -7,7 +7,7 @@ title: 刘先玉           #网站标题
 subtitle: 知易行难      #网站副标题
 description:  Easier said than done      #详情
 keywords: 随笔小站
-author: 刘先玉          #作者
+author: liuxy0551          #作者
 language: zh-CN         #语言
 timezone: UTC           #时区
 
@@ -89,12 +89,12 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://github.com/liuxy0551/liuxy0551.github.io #复制过来
-  branch: master
-  #repo:
-  #  github: https://github.com/liuxy0551/liuxy0551.github.io.git,master
-  #  coding: https://dev.tencent.com/u/liuxy0551/p/liuxy0551.coding.me.git,master
-  #  gitee: https://gitee.com/liuxy0551/liuxy0551.git,master
+  #repository: https://github.com/liuxy0551/liuxy0551.github.io #复制过来
+  #branch: master
+  repo:
+    github: https://github.com/liuxy0551/liuxy0551.github.io.git,master
+    coding: https://git.dev.tencent.com/liuxianyu/liuxy0551.coding.me.git,master
+    gitee: https://gitee.com/liuxy0551/liuxy0551.git,master
 
 admin:
   username: liuxy0551
@@ -106,6 +106,7 @@ sitemap:
 baidusitemap:
   path: baidusitemap.xml
 
+# hexo-tag-cloud
 tag_cloud:
   textFont: Trebuchet MS, Helvetica
   textColor: '#fc6423'
