@@ -117,3 +117,30 @@ tag_cloud:
 # 鼠标选取文字自动提示版权信息
 selectionCopyright:
   enable: true
+
+
+# Markdown-it config
+## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki
+markdown:
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: true
+    linkify: true
+    typographer: true
+    quotes: '“”‘’'
+  plugins:
+  - markdown-it-abbr
+  - markdown-it-footnote
+  - markdown-it-ins
+  - markdown-it-sub
+  - markdown-it-sup
+  - markdown-it-emoji  ## add emoji
+  anchors:
+    level: 1
+    collisionSuffix: 'v'
+    # If `true`, creates an anchor tag with a permalink besides the heading.
+    permalink: true
+    permalinkClass: header-anchor
+    # The symbol used to make the permalink
+    permalinkSymbol: ¶
