@@ -2,7 +2,7 @@ title: 摄影 or 视频
 noDate: true
 type: photos
 comments: false
-author: WuGenQiang
+author: 刘先玉
 updated: 2019-03-15 11:07:21
 date: 2019-03-12 17:51:05
 ---
