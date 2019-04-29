@@ -68,7 +68,7 @@ counter:
   archive_posts:
     zero: 暂无日志。
     one: 目前只有 1 篇随笔,
-    other: "目前有 %d 篇随笔，"
+    other: "目前有 %d 篇随笔,"
 state:
   posts: 日志
   pages: 页面
@@ -78,12 +78,12 @@ search:
   placeholder: 搜索...
 cheers:
   um: 小伙子呀
-  ok: 老铁们
+  ok: 老铁儿
   nice: 大兄弟呀
   good: 妈耶
   great: 报告主公大人
-  excellent: 刘先玉
-keep_on: 继续向前进，fighting！
+  excellent: 青果先生
+keep_on: 要继续向前进啊, fighting! 刘先玉
 symbol:
   comma: "，"
   period: "。"
