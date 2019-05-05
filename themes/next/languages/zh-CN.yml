@@ -70,7 +70,7 @@ counter:
     one: 目前只有 1 篇随笔,
     other: "目前有 %d 篇随笔,"
 state:
-  posts: 日志
+  posts: 随笔
   pages: 页面
   tags: 标签
   categories: 分类
@@ -83,7 +83,7 @@ cheers:
   good: 妈耶
   great: 报告主公大人
   excellent: 青果先生
-keep_on: 要继续向前进啊, fighting! 刘先玉
+keep_on: 继续向前进
 symbol:
   comma: "，"
   period: "。"
