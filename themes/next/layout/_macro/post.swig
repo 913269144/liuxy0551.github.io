@@ -345,7 +345,7 @@
 
     <div>
         {% if not is_index %}
-            <div style="text-align:center;color: #ccc;font-size:14px;">--------------------------  以 上  --------------------------</div>
+            <div style="color:#555;font-size:16px;font-weight:600;margin:40px 0 20px">以上</div>
         {% endif %}
     </div>
 
