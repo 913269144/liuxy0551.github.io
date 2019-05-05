@@ -5,7 +5,6 @@ urlname: hexoEditLinkStyle
 categories:
   - Hexo
 author: WuGenQiang
-hide: true
 date: 2019-04-14 13:12:26
 updated: 2019-04-14 13:12:26
 ---
