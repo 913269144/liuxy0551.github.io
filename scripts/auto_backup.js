@@ -26,7 +26,7 @@ function run() {
 
         echo("======================Auto Backup Begin===========================");
 
-        cd('/Users/liuxy/Desktop/Projects/Blog/myblog');    //此处修改为Hexo根目录路径
+        cd('/Users/liuxy/Desktop/Projects/Blog/liuxy0551.github.io');    //此处修改为Hexo根目录路径
 
         if (exec('git add .').code !== 0) {
 

@@ -8,9 +8,10 @@ categories:
 author: WuGenQiang
 date: 2019-04-15 22:22:22
 updated: 2019-04-27 22:22:27
-summary_img: https://raw.githubusercontent.com/wugenqiang/picGo/master/pictures/20190404142303.png
 ---
+![](https://raw.githubusercontent.com/wugenqiang/PictureBed/master/pictures/060.jpg)
 
+<!--more-->
 
 # 1 写在前面
 
@@ -21,8 +22,6 @@ summary_img: https://raw.githubusercontent.com/wugenqiang/picGo/master/pictures/
 本文参考的文章都会直接给出原文链接或者以注脚的形式标记出处，如有遗漏，欢迎指出。
 
 本文内容会在后续的优化中慢慢补充完整~~
-
-<!--more-->
 
 首先在配置Hexo+NexT之前，最好阅读一下[Hexo官方文档](https://hexo.io/zh-cn/docs/)和[NexT使用文档](http://theme-next.iissnan.com/getting-started.html)
 
@@ -134,7 +133,9 @@ updated: 2019-03-31 19:01:35
 
 ## 3.5 解决NexT主题访问慢
 当博客使用Hexo搭建在Github Page上的时候，可能会访问慢，有一个原因是因为fonts.googleapis.com加载极慢，所以Google了一下，发现了解决方案。
-把在NexT主题的配置文件`_config.yml`里面的：
+注：貌似这种解决方案不能用了，今天2019-04-28博客太卡不知道啥原因，后来F12查看网络延迟，发现是这个中科大的外链字体库出现问题了，不知道什么时候恢复，又恢复了默认状态，因为做过压缩静态资源，所以还是很快，这里我来分享以下如何压缩，参考 [实现博文压缩](https://blog.enjoytoshare.club/article/hexo-do-optimization.html#3-30-%E5%AE%9E%E7%8E%B0%E5%8D%9A%E6%96%87%E5%8E%8B%E7%BC%A9)
+
+~~把在NexT主题的配置文件`_config.yml`里面的：~~
 ```
 font:
   enable: true
@@ -150,7 +151,8 @@ font:
   # fonts.lug.ustc.edu.cn是中科大的源,解决Hexo NexT主题访问慢
   host: //fonts.lug.ustc.edu.cn
 ```
-访问速度就很快了！哦耶，当然如果你有更好的解决办法也可以提啊
+~~访问速度就很快了！哦耶，当然如果你有更好的解决办法也可以提啊~~
+
 还有一种方法就是采用Coding+Github双服务器托管Hexo博客，这样访问速度会更快！
 如果想进行这样的操作，可以参考我的文章：[Coding+Github双服务器托管Hexo](https://blog.enjoytoshare.club/article/hexo-do-server-hosting.html)
 
@@ -715,9 +717,129 @@ quotes: '“”‘’' # 'single'、"double" 变成 ‘single’、“double”
 quotes: '«»“”' # 'single'、"double" 变成 “single”、«single»
 ```
 ### 3.27.3 使用方法
-在 [Emoji](https://www.emojicopy.com/) 中找到你想要的表情，然后点击即可复制。
-比如你想发一个笑脸 😄 直接输入笑脸对应的 `emoji` 编码 `:smile:` 就可以。
+在 [Emoji](https://www.emojicopy.com/) 中找到你想要的表情，然后点击复制即可
+或者你想发一个笑脸 😄 也可以直接输入笑脸对应的 `emoji` 编码 `:smile:` 
 
+## 3.28 修改\`\`代码块自定义样式
+打开 `\themes\next\source\css\_custom\custom.styl` ,向里面加入：(颜色可以自己定义)
+
+```css
+// 以下修改``代码块自定义样式
+// Custom styles.
+code {
+  color: #ff7600;
+  background: #fbf7f8;
+  margin: 2px;
+}
+.highlight, code, pre {
+  border: 1px solid #d6d6d6;
+}
+// 以上修改``代码块自定义样式
+```
+
+效果图如下：
+![](https://raw.githubusercontent.com/wugenqiang/PictureBed/master/pictures/20190428132730.png)
+
+## 3.29 添加PDF
+
+参考博文：[Hexo NexT主题内添加pdf 插件](https://blog.csdn.net/wugenqiang/article/details/88377669)
+
+## 3.30 实现博文压缩
+在站点的根目录下执行以下命令：
+```
+$ npm install gulp -g
+$ npm install gulp-minify-css gulp-uglify gulp-htmlmin gulp-htmlclean gulp --save
+```
+在如下图所示，新建 gulpfile.js ，并填入以下内容：
+
+![](https://img-blog.csdnimg.cn/20190310211626245.png)
+
+```
+var gulp = require('gulp');
+var minifycss = require('gulp-minify-css');
+var uglify = require('gulp-uglify');
+var htmlmin = require('gulp-htmlmin');
+var htmlclean = require('gulp-htmlclean');
+// 压缩 public 目录 css
+gulp.task('minify-css', function() {
+    return gulp.src('./public/**/*.css')
+        .pipe(minifycss())
+        .pipe(gulp.dest('./public'));
+});
+// 压缩 public 目录 html
+gulp.task('minify-html', function() {
+  return gulp.src('./public/**/*.html')
+    .pipe(htmlclean())
+    .pipe(htmlmin({
+         removeComments: true,
+         minifyJS: true,
+         minifyCSS: true,
+         minifyURLs: true,
+    }))
+    .pipe(gulp.dest('./public'))
+});
+// 压缩 public/js 目录 js
+gulp.task('minify-js', function() {
+    return gulp.src('./public/**/*.js')
+        .pipe(uglify())
+        .pipe(gulp.dest('./public'));
+});
+// 执行 gulp 命令时执行的任务
+gulp.task('default', [
+    'minify-html','minify-css','minify-js'
+]);
+```
+生成博文是执行 hexo g && gulp 就会根据 gulpfile.js 中的配置，对 public 目录中的静态资源文件进行压缩。
+
+但是注意：
+
+在hexo 最新3.8版本里面安装gulp 进行压缩。发现会进行报错。百思不得其解，发现是因为网络上的gulp教程均适用于 gulp 4.0 版本以下 ，如果是安装了最新的gulp 4.0 版本的情况下，则就会进行报错。解决办法在下面有说明
+
+![](https://img-blog.csdnimg.cn/20190310212231760.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d1Z2VucWlhbmc=,size_16,color_FFFFFF,t_70)
+
+解决办法参考：https://master.compassionate-raman-1e7f63.netlify.com/posts/74d69307.html
+
+由于我的gulp4..0所以配置文件改为：
+
+```
+var gulp = require('gulp');
+var minifycss = require('gulp-minify-css');
+var uglify = require('gulp-uglify');
+var htmlmin = require('gulp-htmlmin');
+var htmlclean = require('gulp-htmlclean');
+// 压缩 public 目录 css
+gulp.task('minify-css', function() {
+    return gulp.src('./public/**/*.css')
+        .pipe(minifycss())
+        .pipe(gulp.dest('./public'));
+});
+// 压缩 public 目录 html
+gulp.task('minify-html', function() {
+    return gulp.src('./public/**/*.html')
+        .pipe(htmlclean())
+        .pipe(htmlmin({
+            removeComments: true,
+            minifyJS: true,
+            minifyCSS: true,
+            minifyURLs: true,
+        }))
+        .pipe(gulp.dest('./public'))
+});
+// 压缩 public/js 目录 js
+gulp.task('minify-js', function() {
+    return gulp.src('./public/**/*.js')
+        .pipe(uglify())
+        .pipe(gulp.dest('./public'));
+});
+// 执行 gulp 命令时执行的任务
+// gulp 4.0 适用的方式
+gulp.task('build', gulp.parallel('minify-html', 'minify-css', 'minify-js'
+    //build the website
+));
+```
+![](https://img-blog.csdnimg.cn/20190310212624574.png)
+
+欧克，成功
 # 4 自定义域名
 ## 4.1 绑定个人域名
 参考博文：[Hexo博客绑定个人域名](https://blog.enjoytoshare.club/article/hexo-do-domain.html)
@@ -728,6 +850,7 @@ quotes: '«»“”' # 'single'、"double" 变成 “single”、«single»
 ## 4.3 Coding+Github托管Hexo
 参考博文：[Coding+Github双服务器托管Hexo](https://blog.enjoytoshare.club/article/hexo-do-server-hosting.html)
 
+欧克，成功
 # 5 SEO推广
 刚搭建完博客，可能你会发现你发表的文章在谷歌或者百度都搜索不到，因为需要进行SEO优化的，什么是SEO，顾名思义，SEO即(Search Engine Optimization):汉译为搜索引擎优化，下面来总结一下SEO优化的方法，让自己的博文能在谷歌百度上搜索到。
 ## 5.1 生成sitemap
