@@ -44,6 +44,8 @@ function run() {
 
             echo('Error: Git commit failed');
 
+            echo(exec('git commit -m "optimize"').code);
+
             exit(1);
 
         } else {
