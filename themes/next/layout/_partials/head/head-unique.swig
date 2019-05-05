@@ -30,7 +30,7 @@
     (function(){
         if('{{ page.password }}'){
             if (prompt('请输入查看密码') !== '{{ page.password }}'){
-                alert('密码不正确,请询问主编大大');
+                alert('密码不正确，请再想想');
                 history.back();
             }
         }

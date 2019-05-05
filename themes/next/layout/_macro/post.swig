@@ -267,12 +267,6 @@
     {#################}
     {### POST BODY ###}
     {#################}
-    <div>
-        {% if not is_index %}
-            <div style="text-align:center;color: #ccc;font-size:14px;">------------- 以 上 -------------</div>
-        {% endif %}
-    </div>
-
     <div class="post-body{% if theme.han %} han-init-context{% endif %}{% if post.direction && post.direction.toLowerCase() === 'rtl' %} rtl{% endif %}" itemprop="articleBody">
 
       {# Gallery support #}
@@ -347,6 +341,12 @@
       {% else %}
         {{ post.content }}
       {% endif %}
+    </div>
+
+    <div>
+        {% if not is_index %}
+            <div style="text-align:center;color: #ccc;font-size:14px;">--------------------------  以 上  --------------------------</div>
+        {% endif %}
     </div>
 
     {% if theme.related_posts.enable and (theme.related_posts.display_in_home or not is_index) %}
