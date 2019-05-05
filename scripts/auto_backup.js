@@ -36,7 +36,7 @@ function run() {
 
         }
 
-        if (exec('git commit -m "blog"').code !== 0) {
+        if (exec('git commit -m "optimize"').code !== 0) {
 
             echo('Error: Git commit failed');
 
