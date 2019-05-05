@@ -9,11 +9,12 @@ top: 27
 date: 2019-03-31 14:32:26
 updated: 2019-04-27 12:27:52
 ---
-<img width="267px" alt="欢迎来访呀朋友" src="https://raw.githubusercontent.com/wugenqiang/picGo/master/pictures/013.jpg"/>
 
 <!--more-->
 
 提起Markdown，对我来说是毕设、是项目、是不可多得的助手。  
+<!--more-->
+
 [Markdown](https://www.appinn.com/markdown/) 是一种轻量级的"标记语言"，优点在于 
 （1）可以更加专注文章内容而不是排版样式。 
 （2）轻松的导出 HTML 和本身的 .md 文件。 
