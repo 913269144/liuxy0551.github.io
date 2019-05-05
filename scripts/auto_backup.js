@@ -28,7 +28,7 @@ function run() {
 
         cd('/Users/liuxy/Desktop/Projects/Blog/liuxy0551.github.io');    //此处修改为Hexo根目录路径
 
-        if (exec('git add .').code !== 0) {
+        if (exec('git add -A').code !== 0) {
 
             echo('Error: Git add failed');
 
