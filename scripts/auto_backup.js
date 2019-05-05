@@ -34,6 +34,8 @@ function run() {
 
             exit(1);
 
+        } else {
+          echo('Success: Git add success');
         }
 
         if (exec('git commit -m "optimize"').code !== 0) {
@@ -42,6 +44,8 @@ function run() {
 
             exit(1);
 
+        } else {
+          echo('Success: Git commit success');
         }
 
         if (exec('git push origin develop').code !== 0) {
@@ -50,6 +54,8 @@ function run() {
 
             exit(1);
 
+        } else {
+          echo('Success: Git push success');
         }
 
         echo("==================Auto Backup Complete============================")
