@@ -6,7 +6,6 @@ urlname: manual_backup_blog_source_files
 categories:
   - Hexo
 author: WuGenQiang
-hide: true
 date: 2019-04-09 19:04:19
 updated: 2019-04-09 19:04:19
 ---
