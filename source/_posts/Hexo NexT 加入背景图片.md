@@ -5,6 +5,7 @@ tags:
 categories:
   - Hexo
 author: WuGenQiang
+hide: true
 date: 2019-03-31 13:21:57
 updated: 2019-03-31 13:21:57
 ---
