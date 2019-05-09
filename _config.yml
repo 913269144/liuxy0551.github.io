@@ -98,8 +98,8 @@ deploy:
 
 admin:
   username: liuxy0551
-  password_hash: $2a$10$nICUSbzBkXqFMoE.XtSEh.7V6rTdUWKSts.VFoaWTastdl8CvjJQq #你想设置密码生成的bcrypt hash安全密钥
-  secret: wgq154326
+  password_hash: $2a$10$MTlknhXAW0OvGiXKMuYXnudRAxAWuEuM.sPykv2eMF/HMfEoaF4W6 #你想设置密码生成的bcrypt hash安全密钥
+  secret: nowonder
 
 sitemap:
   path: sitemap.xml
