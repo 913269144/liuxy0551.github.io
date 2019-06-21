@@ -19,28 +19,22 @@ updated: 2019-06-21 13:44:22
 <!--more-->
 
 >**GitHub Pages 的优点**
->* 使用零成本：Github Pages 集成在 Github 中，直接和代码管理绑定在一起，随着代码更新自动重新部署，使用非常方便；
->* 免费域名：免费提供 `username.github.io` 的域名，免费的静态网站服务器；
->* 无数量限制：Github Pages 没有使用的数量限制，每一个 repository 都可以部署为一个静态网站；
+>* **使用零成本**：Github Pages 集成在 Github 中，直接和代码管理绑定在一起，随着代码更新自动重新部署，使用非常方便；
+>* **免费域名**：免费提供 `username.github.io` 的域名，免费的静态网站服务器；
+>* **无数量限制**：Github Pages 没有使用的数量限制，每一个 repository 都可以部署为一个静态网站；
 
 
-> 这里介绍一下基于前端框架创建的项目如何部署到 GitHub Pages，这里我拿 Vue 的 webpack 项目举例，包含 vue-cli 2.x 和 vue-cli 3.x。可以先看看 vue-cli 给的文档 [https://cli.vuejs.org/zh/guide/deployment.html#github-pages](https://cli.vuejs.org/zh/guide/deployment.html#github-pages)
+> 这里介绍一下基于前端框架创建的项目如何部署到 GitHub Pages，这里我拿 Vue 的 webpack 项目举例，包含 vue-cli 2.x 和 vue-cli 3.x。
 
 ### 一、 vue-cli 2.x 下使用 GitHub Pages
 
 　　1、创建项目
-
-　　这里我是拿以前的 2.x 项目来测试部署的，想自行创建新项目的话可以参考 [https://github.com/vuejs-templates/webpack](https://github.com/vuejs-templates/webpack)
+　　这里我是拿以前的 2.x 项目来测试部署的，想自行创建新项目的话可以参考 [https://github.com/vuejs-templates/webpack](https://github.com/vuejs-templates/webpack)  
 
 　　2、在 github 上创建一个新的 repository
+　　将本地项目传到 github 上可参考我的另一篇随笔 [Git 常用命令（一）—— 将本地的项目与线上项目关联](https://liuxy0551.github.io/article/git-order-a.html)
 
-　　这里我是拿以前的 2.x 项目来测试部署的，想自行创建新项目的话可以参考 [https://github.com/vuejs-templates/webpack](https://github.com/vuejs-templates/webpack)
-
-
-
-
-
-　　然后看一下项目结构：![](/images/posts/github-pages/1.png)
+　　来看一下项目结构：![](/images/posts/github-pages/1.png)
 
 　　这里需要配置的就是 /config/index.js，其中我们需要关注的是 module.exports 的 build 属性，我们将在这里配置 webpack build 时生成文件的路径。
 
@@ -61,217 +55,40 @@ updated: 2019-06-21 13:44:22
       }
     }
     ```
+    
+　　这里将打包后的 dist 文件夹改名为 docs，不要把 docs 加入到`.gitignore`，然后把整个项目上传到 github 上之后就可以在存储库的 Setting，往下滑，找到 GitHub Pages 部分，将 Source 选择为 master branch / docs folder （第二项），选择后会自动保存，然后在 Github Pages 部分就会给出 url ，点击即可进入我们的静态页面啦。
+
+> 如果线上没有 docs 这个文件夹，在 Setting -> Github Pages -> Source 中是无法选择 master branch / docs folder 的，这个时候可以把 dist 文件夹下的文件放到项目根目录，然后在 Setting -> Github Pages -> Source 中选择第一项 master branch，点击给出的 url 就可以查看静态页面了。不推荐，因为每次打包都需要移动文件，或者 dist/index.html 会和根目录的 index.html 冲突。
 
 
+### 二、 vue-cli 3.x 下使用 GitHub Pages
 
+　　这里我新建了一个基于 vue-cli 3.x 的项目，可以先看看 vue-cli 3.x 给的文档 [https://cli.vuejs.org/zh/guide/deployment.html#github-pages](https://cli.vuejs.org/zh/guide/deployment.html#github-pages)
+主要设置两个参数：`publicPath`和`outputDir`，其余参数设置可以参考 [vue-cli 3.x 中的 vue.config.js](https://cli.vuejs.org/zh/config/#vue-config-js)。
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### 一、 日常使用中的 pull 和 push
-
-　　在日常使用中主要有以下几个指令：
-
-　　1、显示工作目录和暂存区的状态
-　　``` javascript
-     git status
+　　``` 
+    module.exports = {
+      ...
+      devServer: {
+        host: '0.0.0.0',
+        port: '8080',
+        disableHostCheck: true,   // 解决 127.0.0.1 指向其他域名时出现"Invalid Host header"问题
+      },
+      publicPath: process.env.NODE_ENV === 'production'?'/new-school-recruit/': '/',
+      outputDir: 'docs',
+      ...
+    }
     ```
 
-　　2、将修改添加到暂存区：
-    ``` javascript
-     git add -A          提交所有变化
-     git add -u          提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)
-     git add .           提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件
-    ```
+我部署了一个基于 vue-cli 3.x 的项目 [https://liuxy0556.github.io/new-school-recruit](https://liuxy0556.github.io/new-school-recruit)，存储库为 [https://github.com/liuxy0556/new-school-recruit](https://github.com/liuxy0556/new-school-recruit)
 
-　　3、将更改记录(提交)到存储库：
-    ``` javascript
-    git commit -m 'commit message'
-    ```
-
-　　4、将远程存储库中的更改合并到当前分支中（master 为远程分支名）：
-    ``` javascript
-    git pull origin master
-    ```
-
-　　5、将本地分支的更新推送到远程分支（master 为远程分支名）：
-    ``` javascript
-    git push origin master
-    ```
 
 >**注意**
->* 可经常使用`git status`命令来查看当前状态
-
-
-
-### 二、 git clone 项目到本地
-
-　　1、在目的文件夹路径下，输入以下命令进行初始化：
-    ``` javascript
-    git init
-    ```
-
-　　2、两种 clone 操作
-
-　　（1）输入以下命令，就会进入主分支。其中 git clone 后的内容为你要下载的项目地址：
-    ``` javascript
-    git clone https://github.com/liuxy0551/ssm-crud
-    ```
-
-　　（2）clone 指定分支，就会进入指定分支。输入以下命令：
-    ``` javascript
-     git clone -b my https://github.com/haobin12358/Weidian
-    ```
+>* **如果项目中有请求，请使用 https**
     
-　　格式为：git clone -b 分支名 git地址，其中 my 为分支名
 
+### 三、 自定义 template
 
-　　3、本地分支和远程分支
+　　在 Vue + Element UI 的技术栈下，有个我觉得很好用的后台管理系统模板 [vue-element-admin](https://panjiachen.github.io/vue-element-admin-site/zh/guide/)，我尝试将这两个项目通过 GitHub Pages 练习部署。
 
-   命令|说明
-    :--------|:--------
-    git branch -a|查看所有分支列表，包括本地和远程
-    git branch dev|创建名为 dev 的分支，创建分支时需要是最新的环境，创建分支但依然停留在当前分支
-    git checkout dev|切换分支 dev
-    git checkout -b dev|本地创建 dev 分支，同时切换到 dev 分支。只有提交的时候才会在服务端上创建一个分支
-
-   `git checkout -b dev`相当于执行了上述命令的`git branch dev`和`git checkout dev`
-
-
-
-### 三、 将本地的项目与线上项目关联
-
-　　这一部分主要作用是将本地项目备份到线上，达到多端操作的目的。以 Github 举例：
-
-　　1、新建 repository
-　　在 Github 下创建一个新的 repository，取名为 test（与本地欲上传的项目文件夹同名即可）创建的时候不要勾选创建`README.md`，否则后面会有小问题。
-
-　　2、创建本地仓库
-　　进入本地文件夹路径，执行以下命令创建本地仓库：
-    ``` javascript
-     git init
-    ```
-　　
-　　3、修改 .gitignore 文件
-　　如果没有请手动创建一个，在里面加入忽略更新的内容，加快push速度，如`.idea`、`node_modules`等。
-
-　　4、提交代码/文件
-　　执行以下命令，完成代码/文件在本地的提交：
-    ``` javascript
-     git add .
-     git commit -m 'commit message'
-    ```
-    
-　　5、设置远程仓库
-    ``` javascript
-    git remote add origin https://github.com/liuxy0551/test.git
-    ```
-　　如果出现问题：`fatal: remote origin already exists`，提示 origin 已存在，执行`git remote rm origin`删除重复第 5 步即可
-　　![](/images/posts/git-order/1.png)
-
-　　6、更新远程仓库
-　　如果远程仓库不为空，可执行`git pull --rebase origin master`先将远程仓库合并到本地。远程仓库为空可直接执行以下命令：
-    ``` javascript
-    git push -u origin master
-    ```
-
-
-
-### 四、合并 develop 分支到 master 分支
-
-　　项目开发中将自己的代码提交到 develop 分支后，为了发布，需要将 develop 分支的代码合并到 master 分支：
-
-　　1、在 develop 分支提交代码后，切换到 master 分支：
-    ``` javascript
-    git checkout master
-    ```
-
-　　2、更新代码：
-    ``` javascript
-    git pull origin master
-    ```
-
-　　3、merge 代码：
-    ``` javascript
-    git merge develop
-    ```
-
-　　4、提交代码：
-    ``` javascript
-    git push origin master
-    ```
-
-
-
-### 五、删除本地分支、删除远程分支
-
-　　项目的远程仓库备份分支重复，需要删除其中一个，每次操作后可执行`git branch -a`查看分支情况：
-
-　　1、查看分支：
-    ``` javascript
-    git branch -a
-    ```
-
-　　2、删除本地分支 dev01：
-    ``` javascript
-    git branch -d dev01
-    ```
-　　如果报错：error: The branch 'dev01' is not fully merged，可使用`git branch -D dev01`
-
-　　3、删除远程分支 dev01：
-    ``` 
-    git push origin --delete dev01
-    ```
-
-
-
-### 六、删除本地已经 commit 的内容
-
-　　一顿操作猛如虎，各种`git add .`，各种`git commit -m 'test'`，最后一看，还在 master 分支上呢，太吓人了，这咋办？撤销本地已经 commit 的内容：
-    ``` javascript
-    git reset HEAD~
-    ```
-　　然后再 revert 这些代码就可以啦。
-
-
-
-### 七、从 GitHub 远程仓库中删除文件夹或文件
-
-　　在上传项目到 github 时，忘记忽略了某个文件夹 .idea，就直接 push 上去了，最后意识到了此问题，决定删除掉远程仓库中的 .idea 文件夹
-
-　　1、拉取代码：
-    ``` javascript
-    git pull origin master
-    ```
-
-　　2、删除 .idea 文件夹：
-    ``` javascript
-    git rm -r --cached .idea
-    ```
-    
-　　3、将更改记录(提交)到存储库：
-    ```
-    git commit -m 'delete .idea'
-    ```
-
-　　4、提交代码：
-    ```
-    git push origin master
-    ```
-    
-　　或者强制覆盖：
-    ```
-    git push -u origin master
-    ```
-　　本地项目中的 .idea 文件夹不收操作影响，删除的只是远程仓库中的 .idea，可放心删除
+[vue-element-admin](https://liuxy0556.github.io/vue-element-admin)、[vue-admin-template](https://liuxy0556.github.io/vue-admin-template)
