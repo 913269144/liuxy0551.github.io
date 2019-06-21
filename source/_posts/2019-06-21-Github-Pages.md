@@ -92,5 +92,4 @@ updated: 2019-06-21 13:44:22
 ### 三、 自定义 template
 
 　　在 Vue + Element UI 的技术栈下，有个我觉得很好用的后台管理系统模板 [vue-element-admin](https://panjiachen.github.io/vue-element-admin-site/zh/guide/)，我尝试将这两个项目通过 GitHub Pages 练习部署。
-
 [vue-element-admin](https://liuxy0556.github.io/vue-element-admin)、[vue-admin-template](https://liuxy0556.github.io/vue-admin-template)
