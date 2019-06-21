@@ -1,20 +1,82 @@
 ---
-title: Git 常用命令
-urlname: git-order
+title: 使用 GitHub Pages 部署静态网页
+urlname: github-pages
 tags:
   - git
+  - Github Pages
 categories:
   - git
+  - Github Pages
 author: liuxy0551
 copyright: true
-date: 2018-10-12 18:12:22
-updated: 2019-06-13 08:26:22
+date: 2019-06-21 13:44:22
+updated: 2019-06-21 13:44:22
 ---
 
 ## 介绍
 
-　　实习阶段代码同步使用的是 SVN ，工作之后一直在使用 Git 搭配 github 进行代码同步工作，用起来也还顺手。我平常是通过 WebStorm 的 Git 插件来提交和同步代码，偶尔会使用到命令，这里记录一些用到的常见命令。
+　　在日常工作中，偶尔会写一些自己的 demo，这些 demo 不需要部署到服务器上，但是需要快速部署来验证思路，而且要方便分享。主要是很多前端并没有服务器，这里记录一下我的方法：`GitHub Pages`
 <!--more-->
+
+>**GitHub Pages 的优点**
+>* 使用零成本：Github Pages 集成在 Github 中，直接和代码管理绑定在一起，随着代码更新自动重新部署，使用非常方便；
+>* 免费域名：免费提供 `username.github.io` 的域名，免费的静态网站服务器；
+>* 无数量限制：Github Pages 没有使用的数量限制，每一个 repository 都可以部署为一个静态网站；
+
+
+> 这里介绍一下基于前端框架创建的项目如何部署到 GitHub Pages，这里我拿 Vue 的 webpack 项目举例，包含 vue-cli 2.x 和 vue-cli 3.x。可以先看看 vue-cli 给的文档 [https://cli.vuejs.org/zh/guide/deployment.html#github-pages](https://cli.vuejs.org/zh/guide/deployment.html#github-pages)
+
+### 一、 vue-cli 2.x 下使用 GitHub Pages
+
+　　1、创建项目
+
+　　这里我是拿以前的 2.x 项目来测试部署的，想自行创建新项目的话可以参考 [https://github.com/vuejs-templates/webpack](https://github.com/vuejs-templates/webpack)
+
+　　2、在 github 上创建一个新的 repository
+
+　　这里我是拿以前的 2.x 项目来测试部署的，想自行创建新项目的话可以参考 [https://github.com/vuejs-templates/webpack](https://github.com/vuejs-templates/webpack)
+
+
+
+
+
+　　然后看一下项目结构：![](/images/posts/github-pages/1.png)
+
+　　这里需要配置的就是 /config/index.js，其中我们需要关注的是 module.exports 的 build 属性，我们将在这里配置 webpack build 时生成文件的路径。
+
+　　``` 
+    module.exports = {
+      dev: {
+        ...
+      },
+      build: {
+        // Template for index.html
+        index: path.resolve(__dirname, '../docs/index.html'),
+    
+        // Paths
+        assetsRoot: path.resolve(__dirname, '../docs'),
+        assetsSubDirectory: '',
+        assetsPublicPath: '/huobi-trade-admin/',
+        ...
+      }
+    }
+    ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ### 一、 日常使用中的 pull 和 push
