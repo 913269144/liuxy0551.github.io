@@ -26,11 +26,11 @@ function run() {
 
         echo("============================Auto Backup Begin============================");
 
+        echo('git add -A');
+
         cd('/Users/liuxy/Desktop/Projects/Blog/liuxy0551.github.io');    //此处修改为Hexo根目录路径
 
         if (exec('git add -A').code !== 0) {
-
-            echo('git add -A');
 
             echo('Error: git add failed');
 
@@ -38,15 +38,13 @@ function run() {
 
         } else {
 
-          echo('git add -A');
-
           echo('Success: git add success');
+
+          echo('git commit -m "optimize"');
 
         }
 
         if (exec('git commit -m "optimize"').code !== 0) {
-
-            echo('git commit -m "optimize"');
 
             echo('Error: git commit failed');
 
@@ -54,23 +52,19 @@ function run() {
 
         } else {
 
-          echo('git commit -m "optimize"');
-
           echo('Success: git commit success');
+
+          echo('git push origin develop');
 
         }
 
         if (exec('git push origin develop').code !== 0) {
-
-            echo('git push origin develop');
 
             echo('Error: git push failed');
 
             exit(1);
 
         } else {
-
-          echo('git push origin develop');
 
           echo('Success: git push success');
 
