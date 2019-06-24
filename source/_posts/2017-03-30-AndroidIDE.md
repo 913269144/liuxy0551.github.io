@@ -1,6 +1,6 @@
 ---
 title: 轻松搞定 Android 开发环境的搭建
-urlname: AndroidIDE
+urlname: Android-IDE
 tags:
   - Android
 categories:

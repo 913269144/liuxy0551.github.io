@@ -1,6 +1,6 @@
 ---
 title: Oracle 11g 数据库备份涉及的部分记忆点
-urlname: Oracle11g_PLSQL_EmptyTable
+urlname: Oracle11g-PLSQL-EmptyTable
 tags:
   - Oracle
 categories:

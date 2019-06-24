@@ -1,6 +1,6 @@
 ---
 title: Vue 编程之路（二）——跳转页面传值
-urlname: Transmit_Value
+urlname: Transmit-Value
 tags:
   - Vue
 categories:

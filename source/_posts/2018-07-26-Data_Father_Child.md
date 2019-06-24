@@ -1,6 +1,6 @@
 ---
 title: Vue 编程之路（一）——父子组件之间的数据传递
-urlname: Data_Father_Child
+urlname: data-father-child
 tags:
   - Vue
   - 父子组件

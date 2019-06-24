@@ -1,6 +1,6 @@
 ---
 title: 在 apizza 中使用 Mock 来模拟接口数据
-urlname: Mock_apizza
+urlname: mock-apizza
 tags:
   - Mock
 categories:
