@@ -30,11 +30,15 @@ function run() {
 
         if (exec('git add -A').code !== 0) {
 
+            echo('git add -A');
+
             echo('Error: git add failed');
 
             exit(1);
 
         } else {
+
+          echo('git add -A');
 
           echo('Success: git add success');
 
@@ -42,11 +46,15 @@ function run() {
 
         if (exec('git commit -m "optimize"').code !== 0) {
 
+            echo('git commit -m "optimize"');
+
             echo('Error: git commit failed');
 
             exit(1);
 
         } else {
+
+          echo('git commit -m "optimize"');
 
           echo('Success: git commit success');
 
@@ -54,11 +62,15 @@ function run() {
 
         if (exec('git push origin develop').code !== 0) {
 
+            echo('git push origin develop');
+
             echo('Error: git push failed');
 
             exit(1);
 
         } else {
+
+          echo('git push origin develop');
 
           echo('Success: git push success');
 
