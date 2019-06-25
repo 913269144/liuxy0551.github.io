@@ -14,7 +14,7 @@ source/lib/font-awesome/less/
 source/lib/font-awesome/scss/
 !source/lib/font-awesome/*
 
-!source/lib/fancybox/
+# !source/lib/fancybox/
 !source/lib/jquery/
 
 source/lib/ua-parser-js/*
