@@ -103,7 +103,7 @@ $(document).ready(function() {
   }
 });
 
-//----自定义js----------------
+/*//----自定义js----------------
 function createImgEventFullScreen() {
   var imgs = $(".post-body").find("img");
   for(var i = 0;i < imgs.length;i++) {
@@ -126,4 +126,4 @@ function createImgEventFullScreen() {
 }
 setTimeout(function(){
   createImgEventFullScreen();
-},1000)
+},1000)*/
