@@ -6,3 +6,5 @@ node_modules/
 *.log
 public/
 .deploy*/
+
+!themes/next/source/lib/fancybox
