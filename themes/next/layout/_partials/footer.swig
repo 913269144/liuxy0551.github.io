@@ -67,7 +67,7 @@
 <div>
 <!-- 网站运行时间的设置 -->
 <span id="timeDate">载入天数...</span>
-<span id="times">载入时分秒...</span>  Sometimes your whole life boils down to one insame move.
+<span id="times">载入时分秒...</span>  Easier said than done.
 <script>
     var now = new Date();
     function createtime() {
