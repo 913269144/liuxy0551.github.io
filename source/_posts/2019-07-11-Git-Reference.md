@@ -1,5 +1,5 @@
 ---
-title: 改动第三方库 - 仅个人使用
+title: 改动第三方库 - git 后仅个人使用
 urlname: git-reference
 tags:
   - git

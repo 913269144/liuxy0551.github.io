@@ -35,10 +35,10 @@ updated: 2019-06-21 08:26:22
 
 　　（2）clone 指定分支，就会进入指定分支。输入以下命令：
     ``` javascript
-     git clone -b my https://github.com/haobin12358/Weidian
+     git clone -b develop https://github.com/haobin12358/Weidian
     ```
     
-　　格式为：git clone -b 分支名 git地址，其中 my 为分支名
+　　格式为：git clone -b 分支名 git地址，其中 develop 为分支名
 
 
 　　3、本地分支和远程分支
