@@ -1119,6 +1119,11 @@ mylinks:
     site: https://blog.enjoytoshare.club  #友链地址
     info: Sometimes your whole life boils down to one insame move.  #友链说明
 
+  - nickname: wuyuedefeng  #友链名称
+    avatar: https://wuyuedefeng.github.io/images/avatar.png  #友链头像
+    site: https://wuyuedefeng.github.io  #友链地址
+    info: 不积跬步无以至千里  #友链说明
+
 # Hide single post
 hide:
   hide_post: true
