@@ -1,5 +1,5 @@
 ---
-title: 将个人空间放到服务器上ssh/scp/nginx  free -h/top
+title: 将个人空间放到服务器上
 urlname: server-static-page
 tags:
   - Server
@@ -8,7 +8,7 @@ categories:
   - Server
   - Linux
 author: liuxy0551
-hide: true
+hide: false
 copyright: true
 date: 2019-08-15 17:23:45
 updated: 2019-08-15 17:23:45
@@ -16,15 +16,19 @@ updated: 2019-08-15 17:23:45
 
 ## 介绍
 
-最近拿到一个服务器，尝试着把基于 Hexo 搭建的个人空间放到服务器上，用 Nginx 进行转发，顺便再熟悉一下 Linux 下的一些操作，同时会将打包、git 备份、上传服务器等一系列操作自动化
+最近拿到一个服务器，尝试着把基于 Hexo 搭建的个人空间放到服务器上，用 Nginx 进行转发，顺便再熟悉一下 Linux 下的一些操作，同时会将部署、git 备份、上传服务器等一系列操作自动化
 <!--more-->
 
 
-### 一、 引用第三方库、改动第三方库
+### 一、 虚拟机练手
 
-　　1、在项目中按实际需求引用第三方库之后，发现有些地方需要改动，这个时候可以去 node_modules 文件夹中的第三方库直接改动
+　　1、我根据网上的教程在服务器上部署后，个人站的打开速度提升了很多，借用同事的一句话：5M 带宽的服务器放你一个静态资源怎么会慢？
 
-　　2、上述操作不利于后续再次利用改动后的第三方库，同时假如 node_modules 文件夹被清除，或者更换电脑写该项目，则改动不同步
+　　2、实现目标后就想着总结一下过程，故在虚拟机上再试一次，同时也是感受一下 Mac OS 系统中虚拟机的玩法
+
+　　3、我以前在 Windows 上玩的虚拟机是 VMware，这次在 Mac OS 上安装的是 VMware Fusion，基本上新建虚拟机的步骤都差不多，不再赘述，可参考以前的一篇随笔 [在 VMware 中安装 MacOS High Sierra 10.13](https://liuxy0551.github.io/article/vmware-macos.html)
+
+　　4、我目前选用的是和服务器一样的 Cent OS
 
 
 ### 二、 git 改动后的第三方库
