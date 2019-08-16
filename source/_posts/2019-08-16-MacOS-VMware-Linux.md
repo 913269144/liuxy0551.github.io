@@ -48,7 +48,7 @@ updated: 2019-08-16 22:59:48
 ### 三、 安装 Cent OS 7.6
 
 　　1、安装 GNOME 版本，多图
-    {% gp 16-2 %}
+    {% gp 8-4 %}
     ![](/images/posts/MacOS-VMware-Linux/2.png)
     ![](/images/posts/MacOS-VMware-Linux/3.png)
     ![](/images/posts/MacOS-VMware-Linux/4.png)
@@ -57,6 +57,8 @@ updated: 2019-08-16 22:59:48
     ![](/images/posts/MacOS-VMware-Linux/7.png)
     ![](/images/posts/MacOS-VMware-Linux/8.png)
     ![](/images/posts/MacOS-VMware-Linux/9.png)
+    {% endgp %}
+    {% gp 8-4 %}
     ![](/images/posts/MacOS-VMware-Linux/10.png)
     ![](/images/posts/MacOS-VMware-Linux/11.png)
     ![](/images/posts/MacOS-VMware-Linux/12.png)
