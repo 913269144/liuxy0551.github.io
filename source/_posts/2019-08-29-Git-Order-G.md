@@ -20,7 +20,7 @@ updated: 2019-09-05 20:43:30
 
 ###  一、撤销 commit
 
-　　1、在开发中，commit 之后，突然想在刚刚那个 commit 的基础上再改点代码，可以执行以下代码将刚刚的 commit 撤销：
+　　1、在开发中 commit 之后，突然想在刚刚那个 commit 的基础上再改点代码，可以执行以下代码将刚刚的 commit 撤销：
     ``` javascript
     git reset HEAD~
     ```
