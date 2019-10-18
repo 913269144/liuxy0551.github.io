@@ -1,5 +1,5 @@
 ---
-title: CSS 实现同心圆
+title: HTML + CSS 伪元素实现同心圆
 urlname: CSS-concentric-circles
 tags:
   - CSS
