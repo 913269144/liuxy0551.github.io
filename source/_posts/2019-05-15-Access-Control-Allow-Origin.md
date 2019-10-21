@@ -55,5 +55,5 @@ updated: 2019-05-15 17:36:30
 　　在 `dev` 开发时可以使用 webpack 的 `proxy`，参照 [文档](https://webpack.docschina.org/configuration/dev-server/#devserver-proxy) 基本就会了。但这种方法在生产环境是无法使用的，在生产环境中需要使用 `nginx` 进行反向代理。不论是 `proxy` 还是 `nginx` 的原理都是一样的，通过搭建一个中转服务器来转发请求规避跨域的问题。
 
 #### 4、开发环境通过 node 转发请求
-　　在 `dev` 开发时还可以通过 `node` 进行请求转发 [GitHub 代码](https://github.com/liuxy0551/node-proxy)
+　　在 `dev` 开发时还可以通过 `node` 进行请求转发
     
