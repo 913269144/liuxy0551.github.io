@@ -11,12 +11,12 @@ author: liuxy0551
 hide: false
 copyright: true
 date: 2019-08-15 17:23:45
-updated: 2019-08-15 17:23:45
+updated: 2019-11-05 09:52:45
 ---
 
 ## 介绍
 
-最近拿到一个服务器，尝试着把基于 Hexo 搭建的个人空间放到服务器上，用 Nginx 进行转发，顺便再熟悉一下 Linux 下的一些操作，同时会将部署、git 备份、上传服务器等一系列操作自动化
+最近拿到一个服务器，尝试着把基于 Hexo 搭建的个人空间放到服务器上，用 Nginx 进行转发，顺便再熟悉一下 Linux 下的一些操作，同时会将部署、git 备份、上传服务器等一系列操作自动化。
 <!--more-->
 
 
@@ -28,18 +28,27 @@ updated: 2019-08-15 17:23:45
 
 　　3、我以前在 Windows 上玩的虚拟机是 VMware，这次在 Mac OS 上安装的是 VMware Fusion，基本上新建虚拟机的步骤都差不多，不再赘述，可参考以前的一篇随笔 [在 VMware 中安装 MacOS High Sierra 10.13](https://liuxy0551.github.io/article/vmware-macos.html)
 
-　　4、我目前选用的是和服务器一样的 Cent OS
+　　4、我目前选用的是和服务器一样的 Cent OS，具体操作步骤和 [将个人空间放到服务器上 - 服务器实践](http://liuxy0551.whhasa.com/article/server-static-page.html#%E4%BA%8C-%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%9E%E8%B7%B5)
 
 
-### 二、 git 改动后的第三方库
+### 二、 服务器实践
 
-　　1、想要解决上述的担忧，可以将第三方库改动后的代码放到 git 仓库中，同时在 package.json 文件中引用
+　　1、服务器的基础环境准备可参考 [Cent OS 基础环境搭建](http://liuxy0551.whhasa.com/article/cent-os-base.html)，包括安装 git、Nginx 配置、创建 deploy 用户等
 
-　　2、因为原作者的 [wechat-h5-video](https://github.com/tclyjy/wechat-h5-video) 项目是在 GitHub 上，所以我 Fork 了一下这个项目 [https://github.com/liuxy0551/wechat-h5-video](https://github.com/liuxy0551/wechat-h5-video)，
- 将 Fork 后的代码在本地 clone 并打开，再将之前改动的代码替换掉 clone 的代码，然后上传到 git 仓库
+　　1、服务器的基础环境准备可参考 [Cent OS 基础环境搭建](http://liuxy0551.whhasa.com/article/cent-os-base.html)
 
-　　3、在需要引入该第三方库的项目中改动 package.json 文件，将版本号指向 git 仓库的地址，如下图：
-    ![](/images/posts/Git-Reference/1.png)
+　　2、
+
+
+
+
+
+
+
+
+
+
+
 
 
 
