@@ -39,13 +39,19 @@ updated: 2019-11-05 09:52:45
 
 #### （二）、Hexo 的部署
 
-　　需要进行的操作：创建 git 用户、添加本机的 SSH 公钥到服务器、安装 git、安装 nginx 并配置等
+　　需要进行的操作：创建 git 用户、安装 git、安装 nginx 并配置等
 
-　　1、创建 git 用户并设置密码，把 git 用户添加到 sudo 用户组中
+　　1、创建 git 用户并设置密码，把 git 用户添加到 sudo 用户组中。
+    ```shell
+    adduser git
+    usermod -a -G root git
+    passwd git
+    ```
+　　出于安全考虑，刚刚创建的 git 用户不允许 shell 登录，所以执行：
     ```shell
     vim /etc/passwd
     ```
-　　出于安全考虑，刚刚创建的 git 用户不允许 shell 登录，所以将
+　　将
     ```shell
     git:x:1001:1001:,,,:/home/git:/bin/bash
     ```
@@ -53,9 +59,13 @@ updated: 2019-11-05 09:52:45
     ```shell
     git:x:1001:1001:,,,:/home/git:/usr/bin/git-shell
     ```
-　　然后切换到 git 用户`su git`，添加本机的 SSH 公钥到服务器并且设置相应的读写与执行权限。
 
-　　2、安装 git
+　　2、切换到 git 用户，安装 git、nginx
+    ```shell
+    su git
+    sudo yum install -y git
+    sudo yum install -y nginx
+    ```
 
 　　3、在服务器上新建一个`blog`文件夹，用来存储`hexo d`后的静态文件，并且把该文件夹的权限授权给 git 用户。
     ```shell
@@ -81,7 +91,7 @@ updated: 2019-11-05 09:52:45
     ```shell
     git --work-tree=/mnt/projects/hexo-blog/blog --git-dir=/mnt/projects/hexo-blog/blog.git checkout -f
     ```
-　　保存退出之后，再输入以下代码，赋予该文件可执行文件。
+　　保存退出之后，再执行以下命令，赋予该文件可执行文件。
     ```shell
     sudo chmod +x blog.git/hooks/post-receive
     ```
@@ -103,5 +113,34 @@ updated: 2019-11-05 09:52:45
     hexo g
     hexo d
     ```
+    
+　　9、配置 nginx
+　　![](/images/posts/hexo-server/1.png)
+```shell
+server {
+    listen 80; 
+    server_name liuxianyu.cn;
 
-　　部署完毕之后在浏览器输入域名就可以看见博客的内容了。
+    root /mnt/projects/hexo-blog/blog;
+    index index.html;
+    location ^~ /static|img|js|css/ {
+      gzip_static on;
+      expires max;
+      add_header Cache-Control public;
+    }
+    location / {
+      try_files $uri $uri/ /index.html;
+    }
+    location ~* \.(css|js|gif|jpe?g|png)$ {
+      expires 50d;
+      access_log off;
+      add_header Pragma public;
+      add_header Cache-Control "public";
+    }
+}
+```
+　　细节配置参考 [Cent OS 基础环境搭建 - 安装 nginx - 多配置文件](http://liuxy0551.whhasa.com/article/cent-os-base.html#%E4%BA%8C-%E5%A4%9A%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)，配置完成后启动 nginx 并设置开机自启，然后在浏览器输入域名就可以看见博客的内容了。
+    ```shell
+    sudo systemctl start nginx
+    sudo systemctl enable nginx
+    ```
