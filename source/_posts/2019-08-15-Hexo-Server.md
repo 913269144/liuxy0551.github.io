@@ -47,18 +47,6 @@ updated: 2019-11-05 09:52:45
     usermod -a -G root git
     passwd git
     ```
-　　出于安全考虑，刚刚创建的 git 用户不允许 shell 登录，所以执行：
-    ```shell
-    vim /etc/passwd
-    ```
-　　将
-    ```shell
-    git:x:1001:1001:,,,:/home/git:/bin/bash
-    ```
-　　改为
-    ```shell
-    git:x:1001:1001:,,,:/home/git:/usr/bin/git-shell
-    ```
 
 　　2、切换到 git 用户，安装 git、nginx
     ```shell
@@ -115,7 +103,13 @@ updated: 2019-11-05 09:52:45
     ```
     
 　　9、配置 nginx
+    ```shell
+    sudo vim /etc/nginx/nginx.conf
+    ```
 　　![](/images/posts/hexo-server/1.png)
+    ```shell
+    sudo vim /etc/nginx/conf.d/hexo-blog.conf
+    ```
 ```shell
 server {
     listen 80; 
@@ -141,6 +135,6 @@ server {
 ```
 　　细节配置参考 [Cent OS 基础环境搭建 - 安装 nginx - 多配置文件](http://liuxy0551.whhasa.com/article/cent-os-base.html#%E4%BA%8C-%E5%A4%9A%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)，配置完成后启动 nginx 并设置开机自启，然后在浏览器输入域名就可以看见博客的内容了。
     ```shell
-    sudo systemctl start nginx
     sudo systemctl enable nginx
+    sudo systemctl start nginx
     ```
