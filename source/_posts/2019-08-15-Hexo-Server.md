@@ -77,7 +77,7 @@ updated: 2019-11-05 09:52:45
     ```shell
     git --work-tree=/mnt/projects/hexo-blog/blog --git-dir=/mnt/projects/hexo-blog/blog.git checkout -f
     ```
-　　保存退出之后，再执行以下命令，赋予该文件可执行文件。
+　　保存退出之后，再执行以下命令，赋予该文件可执行权限。
     ```shell
     sudo chmod +x blog.git/hooks/post-receive
     ```
