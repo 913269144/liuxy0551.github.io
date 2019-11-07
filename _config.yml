@@ -95,7 +95,7 @@ deploy:
     github: https://github.com/liuxy0551/liuxy0551.github.io.git,master
     coding: https://git.dev.tencent.com/liuxianyu/liuxy0551.coding.me.git,master
     gitee: https://gitee.com/liuxy0551/liuxy0551.git,master
-    server: git@47.110.225.121:/home/git/blog,master
+    server: git@47.99.64.142:/mnt/projects/blog.git,master
 
 admin:
   username: liuxy0551

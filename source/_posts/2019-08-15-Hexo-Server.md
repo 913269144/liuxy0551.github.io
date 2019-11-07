@@ -1,11 +1,11 @@
 ---
-title: 将个人空间放到服务器上
-urlname: server-static-page
+title: 将 Hexo 个人空间放到服务器上
+urlname: hexo-server
 tags:
-  - Server
+  - 服务器
   - Linux
 categories:
-  - Server
+  - 服务器
   - Linux
 author: liuxy0551
 hide: false
@@ -28,16 +28,25 @@ updated: 2019-11-05 09:52:45
 
 　　3、我以前在 Windows 上玩的虚拟机是 VMware，这次在 Mac OS 上安装的是 VMware Fusion，基本上新建虚拟机的步骤都差不多，不再赘述，可参考以前的一篇随笔 [在 VMware 中安装 MacOS High Sierra 10.13](https://liuxy0551.github.io/article/vmware-macos.html)
 
-　　4、我目前选用的是和服务器一样的 Cent OS，具体操作步骤和 [将个人空间放到服务器上 - 服务器实践](http://liuxy0551.whhasa.com/article/server-static-page.html#%E4%BA%8C-%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%9E%E8%B7%B5)
+　　4、我目前选用的是和服务器一样的 Cent OS，具体操作步骤： [将 Hexo 个人空间放到服务器上 - 服务器实践](http://liuxy0551.whhasa.com/article/hexo-server.html#%E4%BA%8C-%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%9E%E8%B7%B5)
 
 
 ### 二、 服务器实践
 
-　　1、服务器的基础环境准备可参考 [Cent OS 基础环境搭建](http://liuxy0551.whhasa.com/article/cent-os-base.html)，包括安装 git、Nginx 配置、创建 deploy 用户等
+　　1、服务器的基础环境准备可参考 [Cent OS 基础环境搭建](http://liuxy0551.whhasa.com/article/cent-os-base.html)，包括安装 git、node、nginx、创建 deploy 用户等
 
-　　1、服务器的基础环境准备可参考 [Cent OS 基础环境搭建](http://liuxy0551.whhasa.com/article/cent-os-base.html)
+　　2、将`hexo d`后 public 文件夹中的所有文件放到`/mnt/projects/blog/`下，同时执行：
+    ```shell
+    sudo vim /etc/nginx/nginx.conf
+    ```
+　　将`server_name`改为你的域名，`root`改成`/mnt/projects/blog/`
+    
+　　![](/images/posts/hexo-server/1.png)
 
-　　2、
+　　2、重启 nginx
+    ```shell
+    sudo systemctl reload/restart nginx
+    ```
 
 
 

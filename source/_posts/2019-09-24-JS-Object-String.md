@@ -8,7 +8,7 @@ categories:
 author: liuxy0551
 copyright: true
 date: 2019-09-24 19:07:15
-updated: 2019-09-24 19:07:15
+updated: 2019-11-07 10:53:08
 ---
 
 ## 介绍
@@ -55,3 +55,8 @@ updated: 2019-09-24 19:07:15
   console.log(valueList)                   // ["page=1", "pageSize=10", "jobId=2"]
   console.log(valueList.join('&'))         // page=1&pageSize=10&jobId=2
 ```
+
+
+### 三、加密方法
+
+　　参考另一篇随笔：[Vue 项目中实现 RSA 加密](http://liuxy0551.whhasa.com/article/vue-rsa.html)
