@@ -39,39 +39,37 @@ updated: 2019-11-05 09:52:45
 
 #### （二）、Hexo 的部署
 
-　　需要进行的操作：创建 git 用户、安装 git、安装 nginx 并配置等
+　　需要进行的操作：创建 deploy 用户、添加本机的 SSH 公钥到服务器、安装 git、安装 nginx 并配置等
 
-　　1、创建 git 用户并设置密码，把 git 用户添加到 sudo 用户组中。
+　　1、创建 deploy 用户并设置密码，把 deploy 用户添加到 sudo 用户组中。
     ```shell
-    adduser git
-    usermod -a -G root git
-    passwd git
+    adduser deploy
+    usermod -a -G root deploy
+    passwd deploy
     ```
 
-　　2、切换到 git 用户，安装 git、nginx
+　　2、添加本机的 SSH 公钥到服务器 - 参考 [Cent OS 基础环境搭建 - 添加本机的 SSH 到服务器](http://liuxy0551.whhasa.com/article/cent-os-base.html#%E4%BA%8C-%E6%B7%BB%E5%8A%A0%E6%9C%AC%E6%9C%BA%E7%9A%84-ssh-%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8)
+
+　　3、切换到 deploy 用户，安装 git、nginx
     ```shell
-    su git
     sudo yum install -y git
     sudo yum install -y nginx
     ```
 
-　　3、在服务器上新建一个`blog`文件夹，用来存储`hexo d`后的静态文件，并且把该文件夹的权限授权给 git 用户。
+　　4、在服务器上新建一个`blog`文件夹，用来存储`hexo d`后的静态文件，并且把该文件夹的权限授权给 deploy 用户。
     ```shell
     sudo mkdir -p /mnt/projects/hexo-blog/blog
     cd /mnt/projects/hexo-blog
-    sudo chown -R git:git blog
+    sudo chown -R deploy:deploy blog
     ```
 
-　　4、在`hexo-blog`目录下初始化一个 git 裸库
+　　5、在`hexo-blog`目录下初始化一个 git 裸库，服务器上的 git 仓库通常都以`.git`结尾，并把 git 仓库的 owner 改为 deploy 用户
     ```shell
     sudo git init --bare blog.git
-    ```
-　　服务器上的 git 仓库一般是为了共享，所以不让用户直接登录到服务器上去改工作区，并且服务器上的 git 仓库通常都以`.git`结尾。然后把 git 仓库的 owner 改为 git 用户：
-    ```shell
-    sudo chown -R git:git blog.git
+    sudo chown -R deploy:deploy blog.git
     ```
 
-　　5、新建一个 post-receive 文件
+　　6、新建一个 post-receive 文件
     ```shell
     sudo vim blog.git/hooks/post-receive
     ```
@@ -84,7 +82,7 @@ updated: 2019-11-05 09:52:45
     sudo chmod +x blog.git/hooks/post-receive
     ```
     
-　　6、修改博客根目录下的`_config.yml`文件：
+　　7、修改博客根目录下的`_config.yml`文件：
     ```shell
     deploy:
       type: git
@@ -92,10 +90,10 @@ updated: 2019-11-05 09:52:45
         github: https://github.com/liuxy0551/liuxy0551.github.io.git,master
         coding: https://git.dev.tencent.com/liuxianyu/liuxy0551.coding.me.git,master
         gitee: https://gitee.com/liuxy0551/liuxy0551.git,master
-        server: git@47.65.55.62:/mnt/projects/hexo-blog/blog.git,master
+        server: deploy@47.65.55.62:/mnt/projects/hexo-blog/blog.git,master
     ```
     
-　　7、在博客根目录下输入以下命令：
+　　8、在博客根目录下输入以下命令：
     ```shell
     hexo clean
     hexo g
