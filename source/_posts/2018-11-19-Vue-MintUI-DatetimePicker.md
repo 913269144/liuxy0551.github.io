@@ -4,11 +4,9 @@ urlname: data-time-picker
 tags:
   - Vue
   - Mint UI
-  - Moment
 categories:
   - Vue
   - Mint UI
-  - Moment
 author: liuxy0551
 copyright: true
 date: 2018-11-19 20:29:30

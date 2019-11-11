@@ -2,9 +2,10 @@ title: 【目录】Hexo+NexT搭建博客拥抱舒爽
 urlname: hexo-do-optimization
 tags:
   - Hexo
-  - NexT
+  - 转载
 categories:
   - Hexo
+  - 转载
 author: WuGenQiang
 date: 2019-04-15 22:22:22
 updated: 2019-04-27 22:22:27

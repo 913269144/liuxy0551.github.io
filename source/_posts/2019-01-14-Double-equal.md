@@ -1,5 +1,5 @@
 ---
-title: JS 中 == 和 === 的区别
+title: JavaScript 中 == 和 === 的区别
 urlname: js-equal
 tags:
   - JavaScript
@@ -13,7 +13,7 @@ updated: 2019-01-14 20:29:30
 
 ## 介绍
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;刚开始接触前端的时候一直不太懂 JS 中 == 和 === 的区别，查找资料后记录一下自己的理解。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;刚开始接触前端的时候一直不太懂 JavaScript 中 == 和 === 的区别，查找资料后记录一下自己的理解。
 <!--more-->
 
 

@@ -3,10 +3,10 @@ title: Vue 移动端项目的一些 UI 框架
 urlname: vue-mobile-ui
 tags:
   - Vue
-  - UI
+  - UI 库
 categories:
   - Vue
-  - UI
+  - UI 库
 author: liuxy0551
 copyright: true
 date: 2019-02-14 20:29:30

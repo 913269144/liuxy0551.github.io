@@ -70,7 +70,7 @@ updated: 2018-11-18 20:29:30
     </mt-popup>
 ```
 
-#### 2、JS 部分
+#### 2、JavaScript 部分
 
 　　![](https://raw.githubusercontent.com/liuxy0551/liuxy0551.github.io.jekyll/master/images/posts/Vue_MintUI_Address/4.png)
 ```
