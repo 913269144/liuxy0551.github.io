@@ -1,5 +1,5 @@
 ---
-title: JavaScript 中 const、var、let 的区别
+title: JavaScript 中的 const、var、let
 urlname: js-const-var-let
 tags:
   - JavaScript
