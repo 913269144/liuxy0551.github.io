@@ -32,7 +32,7 @@ updated: 2019-06-21 13:44:22
 　　这里我是拿以前的 2.x 项目来测试部署的，想自行创建新项目的话可以参考 [https://github.com/vuejs-templates/webpack](https://github.com/vuejs-templates/webpack)  
 
 　　2、在 github 上创建一个新的 repository
-　　将本地项目传到 github 上可参考我的另一篇随笔 [Git 常用命令（一）—— 将本地的项目与线上项目关联](https://liuxy0551.github.io/article/git-order-a.html)
+　　将本地项目传到 github 上可参考我的另一篇随笔 [Git 常用命令（一）—— 将本地的项目与线上项目关联](https://liuxianyu.cn/article/git-order-a.html)
 
 　　来看一下项目结构：![](/images/posts/github-pages/1.png)
 

@@ -42,7 +42,7 @@ updated: 2019-08-16 22:59:48
 　　同事推荐的，之前也在另一个同事的电脑上感受过安装的 Windows 虚拟机，确实看起来不错，但是我使用虚拟机的过程基本都是依赖 VMware，所以用起来不是很习惯，最后还是用起了 VMware。在网上看到 Parallels Desktop 也可以做安卓模拟器，准备后期更一篇相关的随笔，这个软件先保留在电脑里
 
 　　3、VMware Fusion
-　　和我在 Windows 上使用的 VMware Workstation 风格基本一致，新建虚拟机的步骤也差不多，不再赘述，可参考以前的一篇随笔 [在 VMware 中安装 MacOS High Sierra 10.13](https://liuxy0551.github.io/article/vmware-macos.html)。软件需要收费，自行解决
+　　和我在 Windows 上使用的 VMware Workstation 风格基本一致，新建虚拟机的步骤也差不多，不再赘述，可参考以前的一篇随笔 [在 VMware 中安装 MacOS High Sierra 10.13](https://liuxianyu.cn/article/vmware-macos.html)。软件需要收费，自行解决
 
 
 ### 三、 安装 Cent OS 7.6

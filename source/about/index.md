@@ -10,18 +10,18 @@ Hello，欢迎来到刘先玉的个人小站。
 
 ## 关于作者
 
-> 目前是一名前端开发的程序员，我期望在未来几年进行技术沉淀，保证自己的编码技术能力在一定的水平线上。
+> 目前是一名前端开发工程师，期望在未来几年进行技术沉淀，保证自己的编码能力。
   
-> 平时会折腾一些较为新奇的操作，偶尔整理一下个人博客，我会尽量将这些生活的点滴记录下来。
+> 平时会折腾一些较为新奇的操作，整理一下个人博客，我会尽量将这些工作和生活中的点滴记录下来。
   
-> 希望在体会生活的时候，好好感受这些吸引人却又不简单的技术。
+> 希望在忙碌的工作之余，能好好体会生活。
 
 * 个人邮箱：<a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=MFxZRUhJAAUFAXBBQR5TX10" style="text-decoration:none;">liuxy0551@qq.com</a>
 
 * Github：https://github.com/liuxy0551  厚积薄发，蓄势待发
 
 ## 关于本站
-作者：[刘先玉](https://liuxy0551.github.io/)（英文名：Simon）。
+作者：[刘先玉](https://liuxianyu.cn/)（英文名：Simon）。
 本人承诺：本站文章为原创、引用，图片素材来源原创、网络。
 
 ## 关于友链

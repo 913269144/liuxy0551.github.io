@@ -28,14 +28,14 @@ updated: 2019-11-05 09:52:45
 
 　　3、我以前在 Windows 上玩的虚拟机是 VMware，这次在 Mac OS 上安装的是 VMware Fusion，基本上新建虚拟机的步骤都差不多，不再赘述，可参考以前的一篇随笔 [在 VMware 中安装 MacOS High Sierra 10.13](https://liuxianyu.cn/article/vmware-macos.html)
 
-　　4、我目前选用的是和服务器一样的 Cent OS，具体操作步骤参考 [服务器实践](http://liuxianyu.cn/article/hexo-server.html#%E4%BA%8C-%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%9E%E8%B7%B5)
+　　4、我目前选用的是和服务器一样的 Cent OS，具体操作步骤参考 [服务器实践](https://liuxianyu.cn/article/hexo-server.html#%E4%BA%8C-%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%9E%E8%B7%B5)
 
 
 ### 二、 服务器实践
 
 #### （一）、服务器基础环境搭建
 
-　　1、参考 [Cent OS 基础环境搭建](http://liuxianyu.cn/article/cent-os-base.html)
+　　1、参考 [Cent OS 基础环境搭建](https://liuxianyu.cn/article/cent-os-base.html)
 
 #### （二）、Hexo 的部署
 
@@ -48,7 +48,7 @@ updated: 2019-11-05 09:52:45
     passwd deploy
     ```
 
-　　2、添加本机的 SSH 公钥到服务器 - 参考 [Cent OS 基础环境搭建 - 添加本机的 SSH 到服务器](http://liuxianyu.cn/article/cent-os-base.html#%E4%BA%8C-%E6%B7%BB%E5%8A%A0%E6%9C%AC%E6%9C%BA%E7%9A%84-ssh-%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8)
+　　2、添加本机的 SSH 公钥到服务器 - 参考 [Cent OS 基础环境搭建 - 添加本机的 SSH 到服务器](https://liuxianyu.cn/article/cent-os-base.html#%E4%BA%8C-%E6%B7%BB%E5%8A%A0%E6%9C%AC%E6%9C%BA%E7%9A%84-ssh-%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8)
 
 　　3、切换到 deploy 用户，安装 git、nginx
     ```shell
@@ -131,7 +131,7 @@ server {
     }
 }
 ```
-　　细节配置参考 [Cent OS 基础环境搭建 - 安装 nginx - 多配置文件](http://liuxianyu.cn/article/cent-os-base.html#%E4%BA%8C-%E5%A4%9A%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)，配置完成后启动 nginx 并设置开机自启，然后在浏览器输入域名就可以看见博客的内容了。
+　　细节配置参考 [Cent OS 基础环境搭建 - 安装 nginx - 多配置文件](https://liuxianyu.cn/article/cent-os-base.html#%E4%BA%8C-%E5%A4%9A%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)，配置完成后启动 nginx 并设置开机自启，然后在浏览器输入域名就可以看见博客的内容了。
     ```shell
     sudo systemctl enable nginx
     sudo systemctl start nginx

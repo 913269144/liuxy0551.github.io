@@ -12,7 +12,7 @@ comments: false
 	<a class="photos-btn" href="/photos/videos.html">Videos</a>
 </div>
 <div class="instagram itemscope">
-	<a href="https://liuxy0551.github.io" target="_blank" class="open-ins">图片正在加载中…</a>
+	<a href="https://liuxianyu.cn" target="_blank" class="open-ins">图片正在加载中…</a>
 </div>
 <script>
   (function() {
