@@ -17,8 +17,6 @@ updated: 2019-11-15 17:08:08
 <!--more-->
 
 
-### 一、操作步骤
-
 　　先去 Certbot 官网 [https://certbot.eff.org/](https://certbot.eff.org/)，选择 nginx ，再选择 CentOS/RHEL 7，意思是在什么系统上使用什么 HTTP 服务器
 
 ![](/images/posts/centos-nginx-https/1.png)
