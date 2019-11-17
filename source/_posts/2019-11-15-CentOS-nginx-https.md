@@ -25,7 +25,7 @@ updated: 2019-11-15 17:08:08
 
 #### 1、查看服务器实例
 ``` shell
-cat /sys/devices/virtual/dmi/id/product_uuid
+sudo cat /sys/devices/virtual/dmi/id/product_uuid
 ```
 　　如果没有 dmi 文件夹，就进行安装：
 ``` shell
@@ -46,7 +46,7 @@ sudo yum install -y certbot python2-certbot-nginx
 ``` shell
 sudo certbot --nginx
 ```
-　　![](/images/posts/centos-nginx-https/2.png)出现报错，参考资料：[Certbot :ImportError: No module named 'requests.packages.urllib3](https://stackoverflow.com/questions/46168364/certbot-importerror-no-module-named-requests-packages-urllib3)，执行以下指令：
+　　![](/images/posts/centos-nginx-https/2.png)报错如上，参考资料：[Certbot :ImportError: No module named 'requests.packages.urllib3](https://stackoverflow.com/questions/46168364/certbot-importerror-no-module-named-requests-packages-urllib3)，执行以下指令：
 ``` shell
 sudo pip install --upgrade --force-reinstall 'requests==2.6.0' urllib3
 ```
@@ -59,18 +59,22 @@ sudo pip install --upgrade pip
 sudo certbot --nginx
 ```
 
-
-
-
-
------------------------------------
-
-
-#### 4、设置自动续订
-``` shell
-sudo certbot --nginx
-```
-
-#### 5、确定 Certbot 正常运行 
+　　按照提示依次输入：
+　　- 输入邮箱，用于接收紧急续订和安全通知邮件
+　　- 输入 A，阅读并同意条款
+　　- 输入 N，邮箱接收相关推广邮件，不需要
+　　- 输入数字，选择部署的域名，多个域名用`,`隔开
+　　- 输入数字，选择是否将 http 重定向到 https。1、无需重定向，2、重定向
+    {% gp 2-2 %}
+    ![](/images/posts/centos-nginx-https/4.png)
+    ![](/images/posts/centos-nginx-https/5.png)
+    {% endgp %}
+    
+#### 4、确定 Certbot 正常运行 
 
 　　在浏览器输入域名，在 URL 栏确认是否有 🔒 图标
+
+#### 5、设置自动续订
+``` shell
+echo "0 0,12 * * * root python -c 'import random; import time; time.sleep(random.random() * 3600)' && certbot renew" | sudo tee -a /etc/crontab > /dev/null
+```

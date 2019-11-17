@@ -22,7 +22,7 @@ updated: 2019-11-05 09:52:45
 <!--more-->
 
 
-### 一、 初始化
+### 一、 添加 deploy 用户
 
 　　购买服务器后在实例详情 -> 基本信息 -> 更多 -> 重置实例密码，重启服务器后就可以使用`ssh root@47.65.55.62`来连接服务器了。
 
@@ -76,14 +76,7 @@ updated: 2019-11-05 09:52:45
 　　4、再使用`ssh deploy@47.65.55.62`连接服务器就可以免密登录了
 
 
-### 三、服务器生成 ssh key
-服务器拉取 git 代码时无需输入用户名密码
-```shell
-ssh-keygen -t rsa -b 4096 -C "liuxy0551@qq.com"
-```
-
-
-### 四、安装 git
+### 三、安装 git
 -y 代表需要输入 y 的地方自动输入
 ```shell
 sudo yum install git -y
@@ -91,7 +84,7 @@ git --version
 ```
 
 
-### 五、安装 nginx
+### 四、安装 nginx
 
 #### （一）、安装与常见命令
 
@@ -101,18 +94,12 @@ git --version
     nginx -v
     ```
 
-　　2、启动 nginx 并设置开机自启
-    ```shell
-    sudo systemctl start nginx
-    sudo systemctl enable nginx
-    ```
-
-　　3、配置 nginx
+　　2、配置 nginx
     ```shell
     sudo vim /etc/nginx/nginx.conf
     ```
 
-　　4、nginx 常用命令
+　　3、nginx 常用命令
     ```shell
     sudo systemctl start/stop/reload/restart/status nginx
     ```
@@ -151,6 +138,13 @@ server {
     }
 }
 ```
+
+　　启动 nginx 并设置开机自启
+    ```shell
+    sudo systemctl start nginx
+    sudo systemctl enable nginx
+    ```
+
     
 >**注意**
 >* **配置安全组规则, 这是个大坑。80 端口没打开的时候，无法通过 ip 直接访问，同事说 2018 年 80 端口还是默认打开的，欺负新人**
@@ -158,7 +152,7 @@ server {
 ![](/images/posts/cent-os-base/1.png)
 
 
-### 六、安装 node
+### 五、安装 node
 
 　　1、选择下载目录（[为什么选择这个目录下载？](https://blog.csdn.net/qq_15766181/article/details/80755786)）：
     ```shell
@@ -201,6 +195,13 @@ server {
     node -v
     npm -v
     ```
+    
+
+### 六、服务器生成 ssh key
+服务器拉取 git 代码时无需输入用户名密码
+```shell
+ssh-keygen -t rsa -b 4096 -C "liuxy0551@qq.com"
+```
 
 
 ### 七、写在后面

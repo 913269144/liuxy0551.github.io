@@ -41,20 +41,13 @@ updated: 2019-11-05 09:52:45
 
 　　需要进行的操作：创建 deploy 用户、添加本机的 SSH 公钥到服务器、安装 git、安装 nginx 并配置等
 
-　　1、创建 deploy 用户并设置密码，把 deploy 用户添加到 sudo 用户组中。
-    ```shell
-    adduser deploy
-    usermod -a -G root deploy
-    passwd deploy
-    ```
+　　1、创建 deploy 用户并设置密码，把 deploy 用户添加到 sudo 用户组中 - 参考 [Cent OS 基础环境搭建 - 添加 deploy 用户](https://liuxianyu.cn/article/cent-os-base.html#%E4%BA%8C-%E6%B7%BB%E5%8A%A0%E6%9C%AC%E6%9C%BA%E7%9A%84-ssh-%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8)
 
 　　2、添加本机的 SSH 公钥到服务器 - 参考 [Cent OS 基础环境搭建 - 添加本机的 SSH 到服务器](https://liuxianyu.cn/article/cent-os-base.html#%E4%BA%8C-%E6%B7%BB%E5%8A%A0%E6%9C%AC%E6%9C%BA%E7%9A%84-ssh-%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8)
 
 　　3、切换到 deploy 用户，安装 git、nginx
-    ```shell
-    sudo yum install -y git
-    sudo yum install -y nginx
-    ```
+　　参考 [Cent OS 基础环境搭建 - 安装 git](https://liuxianyu.cn/article/cent-os-base.html#%E4%BA%8C-%E6%B7%BB%E5%8A%A0%E6%9C%AC%E6%9C%BA%E7%9A%84-ssh-%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8)
+　　参考 [Cent OS 基础环境搭建 - 安装 nginx](https://liuxianyu.cn/article/cent-os-base.html#%E4%BA%8C-%E6%B7%BB%E5%8A%A0%E6%9C%AC%E6%9C%BA%E7%9A%84-ssh-%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8)
 
 　　4、在服务器上新建一个`blog`文件夹，用来存储`hexo d`后的静态文件，并且把该文件夹的权限授权给 deploy 用户。
     ```shell
@@ -101,32 +94,9 @@ updated: 2019-11-05 09:52:45
     ```
     
 　　9、配置 nginx
-　　![](/images/posts/hexo-server/1.png)
+![](/images/posts/hexo-server/1.png)
 ```shell
 sudo vim /etc/nginx/conf.d/hexo-blog.conf
-```
-```shell
-server {
-    listen 80; 
-    server_name liuxianyu.cn;
-
-    root /mnt/projects/hexo-blog/blog;
-    index index.html;
-    location ^~ /static|img|js|css/ {
-      gzip_static on;
-      expires max;
-      add_header Cache-Control public;
-    }
-    location / {
-      try_files $uri $uri/ /index.html;
-    }
-    location ~* \.(css|js|gif|jpe?g|png)$ {
-      expires 50d;
-      access_log off;
-      add_header Pragma public;
-      add_header Cache-Control "public";
-    }
-}
 ```
 　　细节配置参考 [Cent OS 基础环境搭建 - 安装 nginx - 多配置文件](https://liuxianyu.cn/article/cent-os-base.html#%E4%BA%8C-%E5%A4%9A%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)，配置完成后启动 nginx 并设置开机自启，然后在浏览器输入域名就可以看见博客的内容了。
     ```shell
