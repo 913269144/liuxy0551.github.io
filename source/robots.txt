@@ -4,7 +4,6 @@ Allow: /archives/
 Allow: /categories/
 Allow: /tags/
 Allow: /notes/
-Allow: /love/
 Allow: /page/
 Disallow: /js/
 Disallow: /css/

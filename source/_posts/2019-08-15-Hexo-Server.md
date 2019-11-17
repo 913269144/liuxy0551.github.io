@@ -101,13 +101,10 @@ updated: 2019-11-05 09:52:45
     ```
     
 　　9、配置 nginx
-    ```shell
-    sudo vim /etc/nginx/nginx.conf
-    ```
 　　![](/images/posts/hexo-server/1.png)
-    ```shell
-    sudo vim /etc/nginx/conf.d/hexo-blog.conf
-    ```
+```shell
+sudo vim /etc/nginx/conf.d/hexo-blog.conf
+```
 ```shell
 server {
     listen 80; 

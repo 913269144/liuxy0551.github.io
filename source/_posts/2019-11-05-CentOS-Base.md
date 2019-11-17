@@ -4,9 +4,11 @@ urlname: cent-os-base
 tags:
   - Cent OS
   - Linux
+  - 服务器
 categories:
   - Cent OS
   - Linux
+  - 服务器
 author: liuxy0551
 hide: false
 copyright: true
@@ -24,22 +26,18 @@ updated: 2019-11-05 09:52:45
 
 　　购买服务器后在实例详情 -> 基本信息 -> 更多 -> 重置实例密码，重启服务器后就可以使用`ssh root@47.65.55.62`来连接服务器了。
 
-　　1、默认生成 用户组 和 用户名 相同
+　　1、创建用户，默认生成 用户组 和 用户名 相同；将 deploy 加入 root 组
     ```shell
     adduser deploy
-    ```
-    
-　　2、将 deploy 加入 root 组
-    ```shell
     usermod -a -G root deploy
     ```
     
-　　3、修改 deploy 的密码
+　　2、修改 deploy 的密码
     ```shell
     passwd deploy
     ```
     
-　　4、切换 sudo 时候无需密码
+　　3、切换 sudo 时候无需密码
     ```shell
     vim /etc/sudoers
     ```
@@ -121,16 +119,43 @@ git --version
 
 #### （二）、多配置文件
 
-　　这个服务器之后可能会部署很多学习的项目，为了避免混乱，准备每个项目单独配置。默认配置文件：`/etc/nginx/nginx.conf`。
+　　这个服务器之后可能会部署很多学习的项目，为了避免混乱，准备每个项目单独配置。默认配置文件为：`/etc/nginx/nginx.conf`。
 
 　　1、将 nginx 默认配置中的 server 删除，注意保留文件中的`include`指向。
 ![](/images/posts/cent-os-base/2.png)
 
-　　2、在`/etc/nginx/conf.d`下创建配置文件，以`.conf`结尾，配置内容可以参考百度或 [Nginx - Vue单页面应用配置](https://blogs.zezeping.com/#/Blog/BlogDetail/16)
+　　2、在`/etc/nginx/conf.d`文件夹下创建配置文件，以`.conf`结尾，配置内容可以参考百度或 [Nginx - Vue单页面应用配置](https://blogs.zezeping.com/#/Blog/BlogDetail/16)
+```shell
+sudo vim /etc/nginx/conf.d/hexo-blog.conf
+```
+```
+server {
+    listen 80; 
+    server_name liuxianyu.cn;
+
+    root /mnt/projects/hexo-blog/blog;
+    index index.html;
+    location ^~ /static|img|js|css/ {
+      gzip_static on;
+      expires max;
+      add_header Cache-Control public;
+    }
+    location / {
+      try_files $uri $uri/ /index.html;
+    }
+    location ~* \.(css|js|gif|jpe?g|png)$ {
+      expires 50d;
+      access_log off;
+      add_header Pragma public;
+      add_header Cache-Control "public";
+    }
+}
+```
     
-　　![](/images/posts/cent-os-base/1.png)
 >**注意**
 >* **配置安全组规则, 这是个大坑。80 端口没打开的时候，无法通过 ip 直接访问，同事说 2018 年 80 端口还是默认打开的，欺负新人**
+
+![](/images/posts/cent-os-base/1.png)
 
 
 ### 六、安装 node
