@@ -13,7 +13,7 @@ updated: 2019-11-30 13:43:38
 
 ## 介绍
 
-　　最近在加强 JavaScript 基础的学习，这里整理了一下 JavaScript 中常见的一些方法。
+　　最近在加强 JavaScript 基础的学习，这里整理了一下 JavaScript 中 String 对象和 Array 对象常见的一些方法。
 <!--more-->
 
 
@@ -30,7 +30,7 @@ str.indexOf(searchValue, fromIndex)
 
 #### 2、[includes()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/includes)
 
-　　`indexOf()`方法用于判断一个字符串是否包含在另一个字符串中，根据情况返回 true 或 false。`区分大小写`
+　　`includes()`方法用于判断一个字符串是否包含在另一个字符串中，根据情况返回 true 或 false。`区分大小写`
 
 ``` javascript
 str.includes(searchString)
