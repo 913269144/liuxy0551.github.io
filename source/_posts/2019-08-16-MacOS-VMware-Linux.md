@@ -68,3 +68,26 @@ updated: 2019-08-16 22:59:48
     ![](/images/posts/MacOS-VMware-Linux/16.png)
     ![](/images/posts/MacOS-VMware-Linux/17.png)
     {% endgp %}
+    
+　　2、如果 ifconfig 报错，在 root 用户下执行：
+    ``` shell
+    yum install net-tools -y
+    ```
+　　参考：[Cent OS 7 最小安装完成后，ifconfig 命令用不了](https://www.cnblogs.com/cy60/p/9287856.html)
+
+<table>
+	<tr>
+		<td>用户名</td>
+		<td>root</td>
+		<td>liuxy</td>
+	<tr>
+	<tr>
+		<td>密码</td>
+		<td>123456</td>
+		<td>1234</td>
+	<tr>
+	<tr>
+		<td>IP</td>
+		<td colspan="2">192.168.131.137</td>
+	<tr>
+</table>
