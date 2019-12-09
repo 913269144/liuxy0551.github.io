@@ -21,30 +21,24 @@ updated: 2019-06-21 08:26:22
 
 ###  clone 项目到本地
 
-　　1、在目的文件夹路径下，输入以下命令进行初始化：
-    ``` javascript
-    git init
-    ```
-
-　　2、两种 clone 操作
+　　1、两种 clone 操作
 
 　　（1）输入以下命令，就会进入主分支。其中 git clone 后的内容为你要下载的项目地址：
-    ``` javascript
-    git clone https://github.com/liuxy0551/ssm-crud
+    ``` shell
+    git clone https://github.com/liuxy0551/ssm-crud.git
     ```
 
 　　（2）clone 指定分支，就会进入指定分支。输入以下命令：
-    ``` javascript
-     git clone -b develop https://github.com/haobin12358/Weidian
+    ``` shell
+     git clone -b develop https://github.com/haobin12358/Weidian.git
     ```
     
-　　格式为：git clone -b 分支名 git地址，其中 develop 为分支名
+　　格式为：git clone -b + 分支名 + 远程仓库地址
 
-
-　　3、本地分支和远程分支
+　　2、本地分支和远程分支
 
    命令|说明
-    :--------|:--------
-    git branch -a|查看所有分支列表，包括本地和远程
-    git checkout dev|切换分支 dev
-    git checkout -b dev|本地创建 dev 分支，同时切换到 dev 分支。只有提交的时候才会在服务端上创建一个分支
+    :-------- | :--------
+    git branch -a | 查看所有分支列表，包括本地和远程
+    git checkout dev | 切换分支 dev
+    git checkout -b dev | 本地创建 dev 分支，同时切换到 dev 分支。只有提交的时候才会在服务端上创建一个分支

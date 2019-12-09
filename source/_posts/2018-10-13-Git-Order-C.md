@@ -1,5 +1,5 @@
 ---
-title: Git 常用命令（三）—— 日常使用中的 pull 和 push
+title: Git 常用命令（三）—— 日常使用中的 pull 和 push，追加本地 commit
 urlname: git-order-c
 tags:
   - git
@@ -18,36 +18,45 @@ updated: 2019-06-21 08:26:22
 <!--more-->
 
 
-###  日常使用中的 pull 和 push
+###  一、日常使用中的 pull 和 push
 
 　　在日常使用中主要有以下几个指令：
 
 　　1、显示工作目录和暂存区的状态
-    ``` javascript
+    ``` shell
      git status
     ```
 
 　　2、将修改添加到暂存区：
-    ``` javascript
+    ``` shell
      git add -A          提交所有变化
      git add -u          提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)
      git add .           提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件
     ```
 
-　　3、将更改记录(提交)到存储库：
-    ``` javascript
+　　3、将更改记录 commit 到仓库：
+    ``` shell
     git commit -m 'commit message'
     ```
 
-　　4、将远程存储库中的更改合并到当前分支中（master 为远程分支名）：
-    ``` javascript
+　　4、将远程仓库中的更改更新到当前仓库：
+    ``` shell
     git pull origin master
     ```
 
-　　5、将本地分支的更新推送到远程分支（master 为远程分支名）：
-    ``` javascript
+　　5、将本地仓库的更新推送到远程仓库：
+    ``` shell
     git push origin master
     ```
 
 >**注意**
 >* 可经常使用`git status`命令来查看当前状态
+
+
+###  二、追加本地的 commit
+
+　　在开发中，commit 后未进行 push，为了避免线上仓库出现多次 commit 记录，可以将新代码追加到上一个 commit，执行上述 1、2 的指令，然后：
+    ``` shell
+    git add .
+    git commit --amend
+    ```

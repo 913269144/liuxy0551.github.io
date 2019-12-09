@@ -23,27 +23,27 @@ updated: 2019-06-21 08:26:22
 　　在上传项目到 github 时，忘记忽略了某个文件夹，如：.idea，接着就直接 push 上去了，最后意识到了此问题，决定删除掉远程仓库中的 .idea 文件夹
 
 　　1、拉取代码：
-    ``` javascript
+    ``` shell
     git pull origin master
     ```
 
 　　2、删除 .idea 文件夹：
-    ``` javascript
+    ``` shell
     git rm -r --cached .idea
     ```
     
 　　3、将更改记录(提交)到存储库：
-    ```
+    ``` shell
     git commit -m 'delete .idea'
     ```
 
 　　4、提交代码：
-    ```
+    ``` shell
     git push origin master
     ```
     
-　　或者强制覆盖：
-    ```
+　　或者覆盖：
+    ``` shell
     git push -u origin master
     ```
 　　本地项目中的 .idea 文件夹不收操作影响，删除的只是远程仓库中的 .idea，可放心删除

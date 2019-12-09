@@ -1,5 +1,5 @@
 ---
-title: Git 常用命令（五）—— 删除本地分支、远程分支，删除已经 commit 的内容
+title: Git 常用命令（五）—— 删除本地、远程分支，覆盖远程仓库内容
 urlname: git-order-e
 tags:
   - git
@@ -23,43 +23,39 @@ updated: 2019-06-21 08:26:22
 　　项目的远程仓库备份分支重复，需要删除其中一个，每次操作后可执行`git branch -a`查看分支情况：
 
 　　1、查看分支：
-    ``` javascript
+    ``` shell
     git branch -a
     ```
 
-　　2、删除本地分支 dev01：
-    ``` javascript
-    git branch -d dev01
+　　2、删除本地分支 dev：
+    ``` shell
+    git branch -d dev
     ```
-　　如果报错：error: The branch 'dev01' is not fully merged，可使用`git branch -D dev01`
+　　如果报错：error: The branch 'dev01' is not fully merged，可使用`git branch -D dev`
 
-　　3、删除远程分支 dev01：
-    ``` 
-    git push origin --delete dev01
+　　3、删除远程分支 dev：
+    ``` shell
+    git push origin --delete dev
     ```
 
 
-### 二、删除本地已经 commit 的内容
+### 二、撤销 commit
 
-　　一顿操作猛如虎，各种`git add .`，各种`git commit -m 'test'`，最后一看，还在 master 分支上呢，太吓人了，这咋办？撤销本地已经 commit 的内容：
-    ``` javascript
+　　`~`后可以跟数字，代表撤销几个 commit：
+    ``` shell
     git reset HEAD~
     ```
-　　然后再 revert 这些代码就可以啦。
-
 
 
 ### 三、覆盖已经 push 到线上仓库的内容`谨慎`
 
-　　我偶尔需要在测试环境下测试效果，需要将代码提交到 develop 分支然后通过 Jenkins 打包发布到测试环境，但是这些进行测试的 commit 在合到 master 分支后会不好看，记录一下覆盖的操作：
-``` javascript
+　　偶尔需要在测试环境下测试效果，将代码提交到 develop 分支然后通过 Jenkins 打包发布到测试环境，但是这些进行测试的 commit 不太好看，记录一下覆盖的操作：
+``` shell
 git reset HEAD~2
-```
-``` javascript
 git add .
 git commit -m 'commit message'
 git push -f origin develop
 ```
 
 >**注意**
->* **`-f`在多人协作时出现是会被砍死的**
+>* **`-f`在多人协作时出现是可能会被其他人砍死的**
