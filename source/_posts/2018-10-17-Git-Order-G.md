@@ -67,9 +67,9 @@ updated: 2019-07-11 20:17:32
 同样的 bug，要在 develop 上修复，只需要把`ad52dcf fix: bug issue01`这个提交所做的修改`复制`到 develop 分支。注意：这里只想
 复制`ad52dcf fix: bug issue01`这个提交的内容到 develop 分支，而不是要把 master 分支整个 merge 过来。
 
-    ``` shell
-    git cherry-pick ad52dcf
-    git push origin develop
-    ```
+``` shell
+git cherry-pick ad52dcf
+git push origin develop
+```
 git 自动给 develop 分支做了一次提交，这次提交不同于 master 分支的`ad52dcf`，因为这两个 commit 只是改动相同，但属于两个不同的 commit。
 用`git cherry-pick`，我们就不需要在 develop 分支上手动再把修复 bug 的过程重复一遍。
