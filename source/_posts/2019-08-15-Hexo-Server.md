@@ -103,3 +103,8 @@ sudo vim /etc/nginx/conf.d/hexo-blog.conf
     sudo systemctl enable nginx
     sudo systemctl start nginx
     ```
+
+
+### 三、 参考资料
+
+　　[基于CentOS搭建Hexo博客](https://segmentfault.com/a/1190000012907499)
