@@ -56,11 +56,7 @@ updated: 2019-06-21 13:44:22
     }
     ```
     
-　　这里将打包后的 dist 文件夹改名为 docs，不要把 docs 加入到`.gitignore`，然后把整个项目上传到 github 上之后就可以在存储库的 Setting，往下滑，找到 GitHub Pages 部分，将 Source 选择为 master branch / docs folder （第二项），选择后会自动保存，然后在 Github Pages 部分就会给出 url ，点击即可进入我们的静态页面啦。
-
-![](/images/posts/github-pages/2.png)
-
-> 如果线上没有 docs 这个文件夹，在 Setting -> Github Pages -> Source 中是无法选择 master branch / docs folder 的，这个时候可以把 dist 文件夹下的文件放到项目根目录，然后在 Setting -> Github Pages -> Source 中选择第一项 master branch，点击给出的 url 就可以查看静态页面了。不推荐，因为每次打包都需要移动文件，或者 dist/index.html 会和根目录的 index.html 冲突。
+　　这里将打包后的 dist 文件夹改名为 docs，不要把 docs 加入到`.gitignore`。
 
 
 ### 二、 vue-cli 3.x 下使用 GitHub Pages
@@ -76,7 +72,7 @@ updated: 2019-06-21 13:44:22
         port: '8080',
         disableHostCheck: true,   // 解决 127.0.0.1 指向其他域名时出现"Invalid Host header"问题
       },
-      publicPath: process.env.NODE_ENV === 'production'?'/new-school-recruit/': '/',
+      publicPath: process.env.NODE_ENV === 'production' ? '/new-school-recruit/' : '/',
       outputDir: 'docs',
       ...
     }
@@ -87,6 +83,12 @@ updated: 2019-06-21 13:44:22
 
 >**注意**
 >* **如果项目中有请求，请使用 https**
+
+> 如果线上没有 `docs` 这个文件夹，在 Setting -> Github Pages -> Source 中是无法选择 master branch / docs folder 的，这个时候可以把 dist 文件夹下的文件放到项目根目录，然后在 Setting -> Github Pages -> Source 中选择第一项 master branch，点击给出的 url 就可以查看静态页面了。不推荐，因为每次打包都需要移动文件，或者 dist/index.html 会和根目录的 index.html 冲突。
+
+**`npm run build`打包后然后把整个项目上传到 github 上之后就可以在存储库的 Setting，找到 GitHub Pages 部分，将 Source 选择为 master branch / docs folder （第二项），选择后会自动保存，然后在 Github Pages 部分就会给出 url ，点击即可进入我们的静态页面啦。**
+
+![](/images/posts/github-pages/2.png)
     
 
 ### 三、 自定义 template
