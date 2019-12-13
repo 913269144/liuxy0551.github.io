@@ -8,13 +8,12 @@ categories:
 author: liuxy0551
 copyright: true
 date: 2018-10-17 21:02:46
-updated: 2019-07-11 20:17:32
+updated: 2019-12-13 12:30:45
 ---
 
 ## 介绍
 
-　　实习阶段代码同步使用的是 SVN ，工作之后一直在使用 Git 搭配 github、gitlab、gitee 等进行代码同步工作，用起来也还顺手。
-我之前主要是通过 WebStorm 的 git 插件来提交和同步代码，偶尔会使用到命令，这个系列会记录一些用到的常见命令。
+　　git 常用命令系列随笔会记录一些用到的常见命令，这里记录一下`Bug 分支`：
 <!--more-->
 
 
@@ -71,5 +70,6 @@ updated: 2019-07-11 20:17:32
 git cherry-pick ad52dcf
 git push origin develop
 ```
+
 git 自动给 develop 分支做了一次提交，这次提交不同于 master 分支的`ad52dcf`，因为这两个 commit 只是改动相同，但属于两个不同的 commit。
 用`git cherry-pick`，我们就不需要在 develop 分支上手动再把修复 bug 的过程重复一遍。
