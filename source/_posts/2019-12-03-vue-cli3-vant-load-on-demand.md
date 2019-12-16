@@ -64,7 +64,7 @@ import components from './components'
 Vue.use(components)
 ```
 
-　　3、调用组件：
+　　3、页面使用组件：
 
 ``` javascript
 <van-button type="default">默认按钮</van-button>
