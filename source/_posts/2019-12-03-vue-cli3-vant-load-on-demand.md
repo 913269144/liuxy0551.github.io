@@ -39,11 +39,23 @@ module.exports = {
 ```
 
 
-### 二、按需引入组件
+### 二、完整引入
 
-　　1、在`src/components`下新建`index.js`文件，具体代码见 [src/components/index.js](https://github.com/liuxy0551/vue-cli3-build-optimization/blob/master/src/components/index.js)
+　　在 main.js 中写入以下内容：
 
 ``` javascript
+import Vant from 'vant'
+import 'vant/lib/index.css'
+Vue.use(Vant)
+```
+
+
+### 三、自动按需引入组件
+
+　　1、在`src/components`下新建`vant.js`文件，具体代码见 [src/components/vant.js](https://github.com/liuxy0551/vue-cli3-build-optimization/blob/master/src/components/vant.js)
+
+``` javascript
+// 自动按需引入 Vant 组件
 import { Tabbar, TabbarItem, Button } from 'vant'
 let vantUIs = [Tabbar, TabbarItem, Button]
 
@@ -51,17 +63,17 @@ export default {
   install (Vue) {
     vantUIs.forEach(vantUI => [
       Vue.component(vantUI.name, vantUI)
-      // Vue.use(vantUI)    // 也可以使用 Vue.use
+      // Vue.use(vantUI)    // 也可以使用 Vue.use()
     ])
   }
 }
 ```
 
-　　2、在`main.js`中引入`src/components/index.js`：
+　　2、在`main.js`中引入`src/components/vant.js`：
 
 ``` javascript
-import components from './components'
-Vue.use(components)
+import vant from './components/vant'
+Vue.use(vant)
 ```
 
 　　3、页面使用组件：

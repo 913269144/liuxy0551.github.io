@@ -54,4 +54,4 @@ npm i lodash -S
 ![](/images/posts/vue-cli3-lodash/2.png)
 
 
-- 文件大小从`1.33 MB`缩小到`867.78 KB`，主要体现在 lodash 文件缩小了`550+ KB`
+- 主要体现在 element 文件大小减少了约`550+ KB`
