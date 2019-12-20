@@ -36,7 +36,7 @@ updated: 2019-12-20 14:59:49
 
 ### 二、矩形代码
 
-具体实现代码可参考：[rectangle.vue](https://github.com/liuxy0551/vue-cli3-build-optimization/blob/master/src/pages/rectangle.vue)
+具体实现代码可参考：[rectangle.vue](https://github.com/liuxy0551/vue-cli3-build-optimization/blob/master/src/pages/css/rectangle.vue)
 
 1、HTML
 ``` html
@@ -71,7 +71,7 @@ updated: 2019-12-20 14:59:49
 
 ### 三、钝角三角形代码
 
-具体实现代码可参考：[triangle.vue](https://github.com/liuxy0551/vue-cli3-build-optimization/blob/master/src/pages/triangle.vue)
+具体实现代码可参考：[triangle.vue](https://github.com/liuxy0551/vue-cli3-build-optimization/blob/master/src/pages/css/triangle.vue)
 
 1、HTML
 ``` html
@@ -110,4 +110,6 @@ updated: 2019-12-20 14:59:49
 
 ### 四、气泡对话框
 
-具体实现代码可参考：[bubble.vue](https://github.com/liuxy0551/vue-cli3-build-optimization/blob/master/src/pages/bubble.vue)
+具体实现代码可参考：[bubble.vue](https://github.com/liuxy0551/vue-cli3-build-optimization/blob/master/src/pages/css/bubble.vue)
+
+![](/images/posts/CSS-rectangle-triangle/7.png)
