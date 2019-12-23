@@ -40,7 +40,7 @@ updated: 2018-01-29 20:29:30
 使用 cnpm 安装脚手架：
 
 　　``` 
-    cnpm install -g @angular/cli
+    npm install -g @angular/cli
     ```
 
 然后就可以新建项目了，进入刚才创建的项目里面启动服务:
@@ -48,7 +48,7 @@ updated: 2018-01-29 20:29:30
 　　```
     ng new my-app
     cd my-app
-    cnpm install
+    npm install
     ng serve --open
     ```
 
@@ -65,7 +65,7 @@ updated: 2018-01-29 20:29:30
 　　``` 
     ionic start ionicDemo02 tabs
     cd ionicDemo02
-    cnpm install
+    npm install
     ionic serve
     ```
 

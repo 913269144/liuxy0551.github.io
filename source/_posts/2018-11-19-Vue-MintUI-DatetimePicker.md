@@ -71,7 +71,7 @@ updated: 2018-11-19 20:29:30
 
 ![](https://raw.githubusercontent.com/liuxy0551/liuxy0551.github.io.jekyll/master/images/posts/Vue_MintUI_DatetimePicker/7.png)
 
-　　安装方式： `cnpm install moment`
+　　安装方式： `npm install moment`
 
 　　中文官网： [http://momentjs.cn/](http://momentjs.cn/)
 

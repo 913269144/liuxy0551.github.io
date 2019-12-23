@@ -181,7 +181,7 @@ avatar:
   url: /images/avatar.jpg #/images/avatar.gif  #头像图片路径 图片放置在next/source/images
   rounded: true  #是否显示圆形头像，true表示圆形，false默认
   opacity: 0.9  #透明度0~1之间
-  rotated: true  #是否旋转 true表示旋转，false默认
+  rotated: false  #是否旋转 true表示旋转，false默认
 
 # Table Of Contents in the Sidebar
 toc:

@@ -21,9 +21,9 @@ updated: 2018-09-25 20:29:30
 
 ### 一、生命周期图示
 
-　　![](https://raw.githubusercontent.com/liuxy0551/liuxy0551.github.io.jekyll/master/images/posts/Vue_Life_Cycle/lifecycle.png)
+　　![](/images/posts/vue-life-cycle/lifecycle.png)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上图展示了 Vue 实例的生命周期，这是 [官网上的原图](https://cn.vuejs.org/images/lifecycle.png)，我在学习的时候也没有一下就弄懂这张图说的所有东西，但是随着 Vue 学习的深入，对这张图的兴趣越来越浓。可以看出，在 Vue 生命周期中有很多钩子函数提供给我们在 Vue 生命周期不同时刻进行操作。我们先在图上确认所有的生命周期函数，然后再依次理解。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上图展示了 Vue 实例的生命周期，[官网上的原图](https://cn.vuejs.org/images/lifecycle.png)，我在学习的时候也没有一下就弄懂这张图说的所有东西，但是随着 Vue 学习的深入，对这张图的兴趣越来越浓。可以看出，在 Vue 生命周期中有很多钩子函数提供给我们在 Vue 生命周期不同时刻进行操作。我们先在图上确认所有的生命周期函数，然后再依次理解。
 
 
 >* beforeCreate、created　　　　　　　　　   创建前后
