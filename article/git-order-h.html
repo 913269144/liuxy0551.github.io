@@ -697,7 +697,7 @@ window.onload = function() {
 <p><code>git reset HEAD~&lt;number&gt;</code><br>
 　　修改 bug，提交后发现这次提交的内容是错误的，则应该撤回这次提交，意思就是让 HEAD 这个指针指向其他地方，可以执行：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD~</span><br></pre></td></tr></table></figure>
-<p><code>~</code>之后不填则默认为 1，跟数字则代表撤销几次提交。</p>
+<p><code>~</code>之后不填则默认为 1，数字代表撤销几次提交。</p>
 <h3 id="四-覆盖已经-push-到线上仓库的内容谨慎"><a class="header-anchor" href="#四-覆盖已经-push-到线上仓库的内容谨慎">¶</a>四、覆盖已经 push 到线上仓库的内容<code>谨慎</code></h3>
 <p>偶尔需要在测试服务器多次测试效果，将代码提交到 develop 分支然后通过 Jenkins 打包发布到测试环境，但是这些进行测试的 commit 不太好看，记录一下覆盖的操作：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD~</span><br><span class="line">git add .</span><br><span class="line">git commit -m 'commit message'</span><br><span class="line">git push -f origin develop</span><br></pre></td></tr></table></figure>
@@ -1280,7 +1280,7 @@ window.onload = function() {
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heart"></i>
   </span>

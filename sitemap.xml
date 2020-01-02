@@ -30,13 +30,6 @@
   </url>
   
   <url>
-    <loc>http://liuxianyu.cn/lib/jquery_lazyload/README.html</loc>
-    
-    <lastmod>2019-12-29T11:42:37.184Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://liuxianyu.cn/lib/jquery_lazyload/bower.json</loc>
     
     <lastmod>2019-12-29T11:42:37.184Z</lastmod>
@@ -44,14 +37,21 @@
   </url>
   
   <url>
-    <loc>http://liuxianyu.cn/achives/index.html</loc>
+    <loc>http://liuxianyu.cn/lib/jquery_lazyload/README.html</loc>
+    
+    <lastmod>2019-12-29T11:42:37.184Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://liuxianyu.cn/about/index.html</loc>
     
     <lastmod>2019-12-29T11:42:37.029Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://liuxianyu.cn/about/index.html</loc>
+    <loc>http://liuxianyu.cn/achives/index.html</loc>
     
     <lastmod>2019-12-29T11:42:37.029Z</lastmod>
     
@@ -219,13 +219,6 @@
   </url>
   
   <url>
-    <loc>http://liuxianyu.cn/article/js-object-string.html</loc>
-    
-    <lastmod>2019-11-07T10:53:08.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://liuxianyu.cn/article/vue-rsa.html</loc>
     
     <lastmod>2019-11-07T10:53:08.000Z</lastmod>
@@ -233,14 +226,21 @@
   </url>
   
   <url>
-    <loc>http://liuxianyu.cn/article/hexo-server.html</loc>
+    <loc>http://liuxianyu.cn/article/js-object-string.html</loc>
+    
+    <lastmod>2019-11-07T10:53:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://liuxianyu.cn/article/cent-os-base.html</loc>
     
     <lastmod>2019-11-05T09:52:45.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://liuxianyu.cn/article/cent-os-base.html</loc>
+    <loc>http://liuxianyu.cn/article/hexo-server.html</loc>
     
     <lastmod>2019-11-05T09:52:45.000Z</lastmod>
     
@@ -373,6 +373,13 @@
   </url>
   
   <url>
+    <loc>http://liuxianyu.cn/laboratory/toolBox/index.html</loc>
+    
+    <lastmod>2019-03-17T12:18:28.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://liuxianyu.cn/laboratory/music/index.html</loc>
     
     <lastmod>2019-03-17T12:18:28.000Z</lastmod>
@@ -381,13 +388,6 @@
   
   <url>
     <loc>http://liuxianyu.cn/laboratory/trainingCamp/index.html</loc>
-    
-    <lastmod>2019-03-17T12:18:28.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://liuxianyu.cn/laboratory/toolBox/index.html</loc>
     
     <lastmod>2019-03-17T12:18:28.000Z</lastmod>
     
