@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://liuxianyu.cn/article/2019-2020.html</loc>
+    
+    <lastmod>2020-01-02T14:47:49.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://liuxianyu.cn/article/git-order-h.html</loc>
     
     <lastmod>2019-12-30T16:52:50.000Z</lastmod>
@@ -30,14 +37,14 @@
   </url>
   
   <url>
-    <loc>http://liuxianyu.cn/lib/jquery_lazyload/bower.json</loc>
+    <loc>http://liuxianyu.cn/lib/jquery_lazyload/README.html</loc>
     
     <lastmod>2019-12-29T11:42:37.184Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://liuxianyu.cn/lib/jquery_lazyload/README.html</loc>
+    <loc>http://liuxianyu.cn/lib/jquery_lazyload/bower.json</loc>
     
     <lastmod>2019-12-29T11:42:37.184Z</lastmod>
     
@@ -373,13 +380,6 @@
   </url>
   
   <url>
-    <loc>http://liuxianyu.cn/laboratory/toolBox/index.html</loc>
-    
-    <lastmod>2019-03-17T12:18:28.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://liuxianyu.cn/laboratory/music/index.html</loc>
     
     <lastmod>2019-03-17T12:18:28.000Z</lastmod>
@@ -388,6 +388,13 @@
   
   <url>
     <loc>http://liuxianyu.cn/laboratory/trainingCamp/index.html</loc>
+    
+    <lastmod>2019-03-17T12:18:28.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://liuxianyu.cn/laboratory/toolBox/index.html</loc>
     
     <lastmod>2019-03-17T12:18:28.000Z</lastmod>
     
