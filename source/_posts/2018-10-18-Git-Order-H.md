@@ -41,7 +41,7 @@ git reset HEAD learnGit.txt
 ``` shell
 git reset HEAD~
 ```
-　　`~`之后不填则默认为 1，跟数字则代表撤销几次提交。
+　　`~`之后不填则默认为 1，数字代表撤销几次提交。
 
 
 ### 四、覆盖已经 push 到线上仓库的内容`谨慎`
