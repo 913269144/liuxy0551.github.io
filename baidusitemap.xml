@@ -91,6 +91,9 @@
     <loc>http://liuxianyu.cn/article/to-do-list.html</loc>
     <lastmod>2019-10-18</lastmod>
   </url>  <url>
+    <loc>http://liuxianyu.cn/article/js-bubble-sort.html</loc>
+    <lastmod>2019-10-02</lastmod>
+  </url>  <url>
     <loc>http://liuxianyu.cn/article/telephone-mobile-check.html</loc>
     <lastmod>2019-09-16</lastmod>
   </url>  <url>
@@ -211,10 +214,10 @@
     <loc>http://liuxianyu.cn/article/jekyll_tutorials.html</loc>
     <lastmod>2016-10-14</lastmod>
   </url>  <url>
-    <loc>http://liuxianyu.cn/article/you.html</loc>
+    <loc>http://liuxianyu.cn/article/thinking.html</loc>
     <lastmod>2014-11-30</lastmod>
   </url>  <url>
-    <loc>http://liuxianyu.cn/article/thinking.html</loc>
+    <loc>http://liuxianyu.cn/article/you.html</loc>
     <lastmod>2014-11-30</lastmod>
   </url>
 </urlset>
