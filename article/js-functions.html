@@ -153,14 +153,14 @@
   <meta name="description" content="¶介绍 最近在加强 JavaScript 基础的学习，这里整理了一下 JavaScript 中 String 对象和 Array 对象常见的一些方法。">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript 中常见的一些方法">
+<meta property="og:title" content="JavaScript 中一些常见的方法">
 <meta property="og:url" content="http://liuxianyu.cn/article/js-functions.html">
 <meta property="og:site_name" content="刘先玉">
 <meta property="og:description" content="¶介绍 最近在加强 JavaScript 基础的学习，这里整理了一下 JavaScript 中 String 对象和 Array 对象常见的一些方法。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-11-30T13:43:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript 中常见的一些方法">
+<meta name="twitter:title" content="JavaScript 中一些常见的方法">
 <meta name="twitter:description" content="¶介绍 最近在加强 JavaScript 基础的学习，这里整理了一下 JavaScript 中 String 对象和 Array 对象常见的一些方法。">
 
 
@@ -191,7 +191,7 @@
     })();
 </script>
 
-  <title>JavaScript 中常见的一些方法 | 刘先玉</title>
+  <title>JavaScript 中一些常见的方法 | 刘先玉</title>
   
 
 
@@ -580,7 +580,7 @@ window.onload = function() {
 
         
         
-          <h2 class="post-title" itemprop="name headline">JavaScript 中常见的一些方法
+          <h2 class="post-title" itemprop="name headline">JavaScript 中一些常见的方法
 
               
             
@@ -670,124 +670,114 @@ window.onload = function() {
 <p>最近在加强 JavaScript 基础的学习，这里整理了一下 JavaScript 中 String 对象和 Array 对象常见的一些方法。</p>
 <a id="more"></a>
 <h3 id="一-string-对象"><a class="header-anchor" href="#一-string-对象">¶</a>一、String 对象</h3>
-<h4 id="1-indexof"><a class="header-anchor" href="#1-indexof">¶</a>1、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf" target="_blank" rel="noopener">indexOf()</a></h4>
-<p><code>indexOf()</code>方法返回调用它的 String 对象中<code>第一次</code>出现的指定值的索引，从 fromIndex 处进行搜索，如果未找到该值，则返回 -1。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str.indexOf(searchValue)</span><br><span class="line">str.indexOf(searchValue, fromIndex)</span><br></pre></td></tr></table></figure>
-<h4 id="2-includes"><a class="header-anchor" href="#2-includes">¶</a>2、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/includes" target="_blank" rel="noopener">includes()</a></h4>
-<p><code>includes()</code>方法用于判断一个字符串是否包含在另一个字符串中，根据情况返回 true 或 false。<code>区分大小写</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str.includes(searchString)</span><br><span class="line">str.includes(searchString, fromIndex)</span><br></pre></td></tr></table></figure>
-<h4 id="3-replace"><a class="header-anchor" href="#3-replace">¶</a>3、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/replace" target="_blank" rel="noopener">replace()</a></h4>
-<p><code>replace()</code>方法用于替换字符串中的某些字符，返回值是一个部分或全部匹配由替代模式所取代的新的字符串。</p>
-<p><code>语法：</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.replace(regexp|substr, newSubStr|<span class="function"><span class="keyword">function</span>)</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>regexp（pattern）：一个RegExp 对象或者其字面量，该正则所匹配的内容<code>全部都会被第二个参数的返回值替换</code>。</li>
-<li>substr（pattern）：一个将被 newSubStr 替换的字符串，<code>仅第一个匹配项会被替换</code>。</li>
-<li>newSubStr（replacement）：用于替换掉第一个参数在原字符串中匹配到的字符串。</li>
-<li>function（replacement）：一个用来创建新字符串的函数，该函数的返回值将替换第一个参数匹配到的字符串。</li>
-</ul>
-<p><code>举例：</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p = <span class="string">'The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?'</span></span><br><span class="line"><span class="keyword">let</span> regex = <span class="regexp">/dog/gi</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(p.replace(regex, <span class="string">'ferret'</span>))     <span class="comment">// "The quick brown fox jumps over the lazy ferret. If the ferret reacted, was it really lazy?"</span></span><br><span class="line"><span class="built_in">console</span>.log(p.replace(<span class="string">'dog'</span>, <span class="string">'monkey'</span>))     <span class="comment">// "The quick brown fox jumps over the lazy monkey. If the dog reacted, was it really lazy?"</span></span><br></pre></td></tr></table></figure>
-<h4 id="4-slice"><a class="header-anchor" href="#4-slice">¶</a>4、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/slice" target="_blank" rel="noopener">slice()</a></h4>
-<p><code>slice()</code>方法提取某个字符串的一部分，并返回一个新的字符串，且不会改动原字符串。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str.slice(beginIndex)</span><br><span class="line">str.slice(beginIndex, endIndex)</span><br></pre></td></tr></table></figure>
-<h4 id="5-split"><a class="header-anchor" href="#5-split">¶</a>5、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/split" target="_blank" rel="noopener">split()</a></h4>
-<p><code>split()</code>方法使用指定的字符串将一个 String 对象分割成字符串数组，这个指定的字符串作为分隔符来决定每个拆分的位置，返回源字符串以分隔符出现位置分隔而成的一个数组。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str.split(separator)</span><br><span class="line">str.split(separator, limit)</span><br></pre></td></tr></table></figure>
+<h4 id="1-indexof-返回索引值"><a class="header-anchor" href="#1-indexof-返回索引值">¶</a>1、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf" target="_blank" rel="noopener">indexOf()</a> 返回索引值</h4>
+<p><code>indexOf()</code>方法返回 str 中<code>第一次</code>出现指定值的索引，从 fromIndex 处进行搜索，如果未找到该值，则返回 -1。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.indexOf(searchValue[, fromIndex])</span><br></pre></td></tr></table></figure>
+<h4 id="2-includes-返回布尔值"><a class="header-anchor" href="#2-includes-返回布尔值">¶</a>2、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/includes" target="_blank" rel="noopener">includes()</a> 返回布尔值</h4>
+<p><code>includes()</code>方法用于判断 str 中是否包含另一个字符串，从 fromIndex 处进行搜索，根据情况返回 true 或 false。<code>区分大小写</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.includes(searchString[, fromIndex])</span><br></pre></td></tr></table></figure>
+<h4 id="3-split-返回-array"><a class="header-anchor" href="#3-split-返回-array">¶</a>3、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/split" target="_blank" rel="noopener">split()</a> 返回 Array</h4>
+<p><code>split()</code>方法使用指定字符串将目标字符串分割成字符串数组，这个指定的字符串作为分隔符来决定每个拆分的位置，返回目标字符串以分隔符出现位置分隔而成的一个数组。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.split([separator[, limit]])</span><br></pre></td></tr></table></figure>
 <ul>
 <li>separator：分隔符，可以是一个字符串或者正则表达式</li>
 <li>limit：返回值数组的长度</li>
 </ul>
-<h4 id="6-substr"><a class="header-anchor" href="#6-substr">¶</a>6、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substr" target="_blank" rel="noopener">substr()</a></h4>
-<p><code>substr()</code>方法返回一个字符串中从指定位置开始到指定字符数的字符。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str.substr(beginIndex)</span><br><span class="line">str.substr(beginIndex, length)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>注意</strong></p>
+<h4 id="4-replace-返回新字符串-不改变原字符串"><a class="header-anchor" href="#4-replace-返回新字符串-不改变原字符串">¶</a>4、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/replace" target="_blank" rel="noopener">replace()</a> 返回新字符串，不改变原字符串</h4>
+<p><code>replace()</code>方法用于替换字符串中的某些字符，返回一个部分匹配替换或全部匹配替换的新字符串。</p>
+<p><code>语法：</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str.replace(regexp|substr, newSubStr|<span class="function"><span class="keyword">function</span>)</span></span><br><span class="line"><span class="function">'<span class="title">abcabc</span>'.<span class="title">replace</span>(<span class="params"><span class="regexp">/a/g</span>, <span class="string">'d'</span></span>) // '<span class="title">dbcdbc</span>'</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li><strong>建议使用 substring()</strong></li>
+<li>regexp（pattern）：一个RegExp 对象或者其字面量，该正则所匹配的内容<code>全部都会被 replace 第二个参数的返回值替换</code>。</li>
+<li>substr（pattern）：一个将被 newSubStr 替换的字符串，<code>仅第一个匹配项会被替换</code>。</li>
+<li>newSubStr（replacement）：用于替换掉第一个参数在原字符串中匹配到的字符串。</li>
+<li>function（replacement）：一个用来创建新字符串的函数，该函数的返回值将替换第一个参数匹配到的字符串。</li>
 </ul>
-</blockquote>
-<h4 id="7-substring"><a class="header-anchor" href="#7-substring">¶</a>7、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substring" target="_blank" rel="noopener">substring()</a></h4>
+<h4 id="5-slice-返回新字符串-不改变原字符串"><a class="header-anchor" href="#5-slice-返回新字符串-不改变原字符串">¶</a>5、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/slice" target="_blank" rel="noopener">slice()</a> 返回新字符串，不改变原字符串</h4>
+<p><code>slice()</code>方法提取字符串的一部分，并返回一个新的字符串，且不会改动原字符串。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.slice(beginIndex[, endIndex]) <span class="comment">// [beginIndex, endIndex)</span></span><br></pre></td></tr></table></figure>
+<h4 id="6-substring-返回新字符串"><a class="header-anchor" href="#6-substring-返回新字符串">¶</a>6、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substring" target="_blank" rel="noopener">substring()</a> 返回新字符串</h4>
 <p><code>substring()</code>方法返回一个字符串从开始索引直到字符串末尾的一个子集, 或从开始索引到结束索引（不包含结束索引）之间的一个子集。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str.substring(beginIndex)</span><br><span class="line">str.substring(beginIndex, endIndex)        <span class="comment">// [beginIndex, endIndex)</span></span><br></pre></td></tr></table></figure>
-<h3 id="二-array-对象"><a class="header-anchor" href="#二-array-对象">¶</a>二、Array 对象</h3>
-<h4 id="1-isarray"><a class="header-anchor" href="#1-isarray">¶</a>1、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray" target="_blank" rel="noopener">isArray()</a></h4>
-<p><code>Array.isArray()</code>用于确定传递的值是否是一个 Array。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.isArray([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])            <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Array</span>.isArray(&#123; <span class="attr">foo</span>: <span class="number">123</span> &#125;)         <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Array</span>.isArray(<span class="string">"foobar"</span>)             <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Array</span>.isArray(<span class="literal">undefined</span>)            <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.substring(beginIndex[, endIndex])        <span class="comment">// [beginIndex, endIndex)</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li>当检测Array实例时, Array.isArray 优于 instanceof，因为 Array.isArray 能检测 iframes。</li>
+<li>endIndex 为负数或 NaN时，则被当作 0</li>
+<li>beginIndex 和 endIndex 大于 str.length 时，会被当作 str.length</li>
 </ul>
-<h4 id="2-concat"><a class="header-anchor" href="#2-concat">¶</a>2、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/concat" target="_blank" rel="noopener">concat()</a></h4>
+<h3 id="二-array-对象"><a class="header-anchor" href="#二-array-对象">¶</a>二、Array 对象</h3>
+<h4 id="1-isarray-返回布尔值"><a class="header-anchor" href="#1-isarray-返回布尔值">¶</a>1、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray" target="_blank" rel="noopener">isArray()</a> 返回布尔值</h4>
+<p><code>Array.isArray()</code>用于确定传递的值是否是一个 Array。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.isArray([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])            <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Array</span>.isArray(<span class="string">'foobar'</span>)             <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Array</span>.isArray(<span class="literal">undefined</span>)            <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>当检测 Array 实例时, Array.isArray 优于<code>arr1 instanceof Array</code>，因为 Array.isArray 能检测 iframes。</li>
+</ul>
+<h4 id="2-concat-返回新数组-不改变原数组"><a class="header-anchor" href="#2-concat-返回新数组-不改变原数组">¶</a>2、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/concat" target="_blank" rel="noopener">concat()</a> 返回新数组，不改变原数组</h4>
 <p><code>concat()</code>方法用于合并两个或多个数组。此方法不会更改现有数组，而是返回一个新数组。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr1.concat(arr2, arr3, ...)</span><br></pre></td></tr></table></figure>
-<h4 id="3-every"><a class="header-anchor" href="#3-every">¶</a>3、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/every" target="_blank" rel="noopener">every()</a></h4>
-<p><code>every()</code>方法测试一个数组内的所有元素是否都能通过某个指定函数的测试。它返回一个布尔值。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr1 = [<span class="number">12</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">130</span>, <span class="number">44</span>]</span><br><span class="line"><span class="keyword">let</span> arr2 = [<span class="number">12</span>, <span class="number">54</span>, <span class="number">18</span>, <span class="number">130</span>, <span class="number">44</span>]</span><br><span class="line"><span class="keyword">let</span> arr3 = [<span class="number">12</span>, <span class="number">54</span>, <span class="number">18</span>, <span class="number">130</span>, <span class="number">44</span>]</span><br><span class="line"></span><br><span class="line">arr1.every(<span class="function"><span class="params">i</span> =&gt;</span> i &gt;= <span class="number">10</span>)            <span class="comment">// false</span></span><br><span class="line">arr2.every(<span class="function"><span class="params">i</span> =&gt;</span> i &gt;= <span class="number">10</span>)            <span class="comment">// true</span></span><br><span class="line">arr3.every(<span class="function">(<span class="params">i, index, array</span>) =&gt;</span> &#123; <span class="keyword">return</span> i &gt;= <span class="number">20</span> &#125;)            <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>注意</strong></p>
-<ul>
-<li><strong>1、若收到一个空数组，此方法在任何情况下都会返回 true</strong></li>
-<li><strong>2、可接收第二个参数，执行第一个函数时的 this</strong></li>
-</ul>
-</blockquote>
-<h4 id="4-filter"><a class="header-anchor" href="#4-filter">¶</a>4、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/filter" target="_blank" rel="noopener">filter()</a></h4>
-<p><code>filter()</code>方法创建一个新数组, 包含了通过测试函数的所有元素。</p>
+<h4 id="3-filter-返回新数组"><a class="header-anchor" href="#3-filter-返回新数组">¶</a>3、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/filter" target="_blank" rel="noopener">filter()</a> 返回新数组</h4>
+<p><code>filter()</code>方法创建一个新数组, 包含了通过测试的所有元素。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr1 = [<span class="number">12</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">130</span>, <span class="number">44</span>]</span><br><span class="line"><span class="keyword">let</span> arr2 = [<span class="number">12</span>, <span class="number">54</span>, <span class="number">18</span>, <span class="number">130</span>, <span class="number">44</span>]</span><br><span class="line"></span><br><span class="line">arr1.filter(<span class="function"><span class="params">i</span> =&gt;</span> i &gt;= <span class="number">10</span>)            <span class="comment">// [12, 130, 44]</span></span><br><span class="line">arr2.filter(<span class="function">(<span class="params">i, index, array</span>) =&gt;</span> i &gt;= <span class="number">10</span>)            <span class="comment">// [12, 130, 44]</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>注意</strong></p>
-<ul>
-<li><strong>可接收第二个参数，执行第一个函数时的 this</strong></li>
-</ul>
-</blockquote>
-<h4 id="5-flat"><a class="header-anchor" href="#5-flat">¶</a>5、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/flat" target="_blank" rel="noopener">flat()</a></h4>
-<p><code>flat()</code>方法会按照一个可指定的深度递归遍历数组，并将所有元素与遍历到的子数组中的元素合并为一个新数组返回。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]]</span><br><span class="line">arr1.flat()             <span class="comment">// [1, 2, 3, 4]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr2 = [<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>, [<span class="number">5</span>, <span class="number">6</span>]]]</span><br><span class="line">arr2.flat()             <span class="comment">// [1, 2, 3, 4, [5, 6]]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr3 = [<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>, [<span class="number">5</span>, <span class="number">6</span>]]]</span><br><span class="line">arr3.flat(<span class="number">2</span>)            <span class="comment">// [1, 2, 3, 4, 5, 6]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//使用 Infinity，可展开任意深度的嵌套数组</span></span><br><span class="line"><span class="keyword">let</span> arr4 = [<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>, [<span class="number">5</span>, <span class="number">6</span>, [<span class="number">7</span>, <span class="number">8</span>, [<span class="number">9</span>, <span class="number">10</span>]]]]]</span><br><span class="line">arr4.flat(<span class="literal">Infinity</span>)     <span class="comment">// [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr5 = [<span class="number">1</span>, <span class="number">2</span>, , <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">arr4.flat()             <span class="comment">// [1, 2, 4, 5]</span></span><br></pre></td></tr></table></figure>
-<h4 id="6-foreach"><a class="header-anchor" href="#6-foreach">¶</a>6、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach" target="_blank" rel="noopener">forEach()</a></h4>
-<p><code>forEach()</code>方法对数组的每个元素执行一次提供的函数。</p>
-<blockquote>
-<p><strong>注意</strong></p>
-<ul>
-<li><strong>无法跳出循环</strong></li>
-</ul>
-</blockquote>
-<h4 id="7-includes"><a class="header-anchor" href="#7-includes">¶</a>7、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/includes" target="_blank" rel="noopener">includes()</a></h4>
-<p><code>includes()</code>方法用来判断一个数组是否包含一个指定的值，包含则返回 true，反之返回 false。</p>
-<h4 id="8-indexof"><a class="header-anchor" href="#8-indexof">¶</a>8、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf" target="_blank" rel="noopener">indexOf()</a></h4>
-<p><code>indexOf()</code>方法返回在数组中可以找到一个给定元素的第一个索引，如果不存在，则返回 -1。</p>
-<h4 id="9-join"><a class="header-anchor" href="#9-join">¶</a>9、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/join" target="_blank" rel="noopener">join()</a></h4>
-<p><code>join()</code>方法将一个数组（或一个类数组对象）的所有元素连接成一个字符串并返回这个字符串。</p>
-<h4 id="10-map"><a class="header-anchor" href="#10-map">¶</a>10、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank" rel="noopener">map()</a></h4>
+<h4 id="4-map-返回新数组"><a class="header-anchor" href="#4-map-返回新数组">¶</a>4、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank" rel="noopener">map()</a> 返回新数组</h4>
 <p><code>map()</code>方法创建一个新数组，其结果是该数组中的每个元素都调用执行函数后返回的结果。</p>
-<h4 id="11-pop"><a class="header-anchor" href="#11-pop">¶</a>11、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/pop" target="_blank" rel="noopener">pop()</a></h4>
+<h4 id="5-pop-返回从数组中删除的元素-数组为空时返回-undefined"><a class="header-anchor" href="#5-pop-返回从数组中删除的元素-数组为空时返回-undefined">¶</a>5、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/pop" target="_blank" rel="noopener">pop()</a> 返回从数组中删除的元素（数组为空时返回 undefined）</h4>
 <p><code>pop()</code>方法从数组中删除最后一个元素，并返回该元素的值。此方法更改数组的长度。</p>
-<h4 id="12-push"><a class="header-anchor" href="#12-push">¶</a>12、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/push" target="_blank" rel="noopener">push()</a></h4>
+<h4 id="6-push-返回数组新的-length"><a class="header-anchor" href="#6-push-返回数组新的-length">¶</a>6、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/push" target="_blank" rel="noopener">push()</a> 返回数组新的 length</h4>
 <p><code>push()</code>方法将一个或多个元素添加到数组的末尾，并返回该数组的新长度。此方法更改数组的长度。</p>
-<h4 id="13-shift"><a class="header-anchor" href="#13-shift">¶</a>13、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/shift" target="_blank" rel="noopener">shift()</a></h4>
+<h4 id="7-shift-返回从数组中删除的元素-数组为空时返回-undefined"><a class="header-anchor" href="#7-shift-返回从数组中删除的元素-数组为空时返回-undefined">¶</a>7、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/shift" target="_blank" rel="noopener">shift()</a> 返回从数组中删除的元素（数组为空时返回 undefined）</h4>
 <p><code>shift()</code>方法从数组中删除第一个元素，并返回该元素的值。此方法更改数组的长度。</p>
-<h4 id="14-unshift"><a class="header-anchor" href="#14-unshift">¶</a>14、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift" target="_blank" rel="noopener">unshift()</a></h4>
+<h4 id="8-unshift-返回数组新的-length"><a class="header-anchor" href="#8-unshift-返回数组新的-length">¶</a>8、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift" target="_blank" rel="noopener">unshift()</a> 返回数组新的 length</h4>
 <p><code>unshift()</code>方法将一个或多个元素添加到数组的开头，并返回该数组的新长度。此方法更改数组的长度。</p>
-<h4 id="15-slice"><a class="header-anchor" href="#15-slice">¶</a>15、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/slice" target="_blank" rel="noopener">slice()</a></h4>
-<p><code>slice()</code>方法返回一个新的数组对象，这一数组对象是由 beginIndex 和 endIndex 决定的原数组的浅拷贝。原始数组不会被改变。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arr.slice()</span><br><span class="line">arr.slice(beginIndex)</span><br><span class="line">arr.slice(beginIndex, endIndex)        <span class="comment">// [beginIndex, endIndex)</span></span><br></pre></td></tr></table></figure>
+<h4 id="9-foreach-返回-undefined"><a class="header-anchor" href="#9-foreach-返回-undefined">¶</a>9、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach" target="_blank" rel="noopener">forEach()</a> 返回 undefined</h4>
+<p><code>forEach()</code>方法对数组的每个元素执行一次函数。</p>
+<blockquote>
+<p><strong>注意</strong></p>
+<ul>
+<li><strong>除了抛出异常以外，无法跳出循环</strong></li>
+</ul>
+</blockquote>
+<h4 id="10-slice-返回新数组"><a class="header-anchor" href="#10-slice-返回新数组">¶</a>10、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/slice" target="_blank" rel="noopener">slice()</a> 返回新数组</h4>
+<p><code>slice()</code>方法返回一个含有被提取元素的新数组，这个数组是由 beginIndex 和 endIndex 决定的原数组的浅拷贝。原始数组不会被改变。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.slice([beginIndex[, endIndex]])        <span class="comment">// [beginIndex, endIndex)</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>如果 beginIndex 大于数组的长度，则返回空数组</li>
 <li>slice(-2) 表示提取数组中的倒数第二个元素到最后一个元素（包含最后一个元素）</li>
 <li>slice(-2, -1) 表示提取数组中的倒数第二个元素到最后一个元素（不包含最后一个元素）</li>
 </ul>
-<h4 id="16-some"><a class="header-anchor" href="#16-some">¶</a>16、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/some" target="_blank" rel="noopener">some()</a></h4>
+<h4 id="11-splice-返回被删除元素组成的数组"><a class="header-anchor" href="#11-splice-返回被删除元素组成的数组">¶</a>11、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/splice" target="_blank" rel="noopener">splice()</a> 返回被删除元素组成的数组</h4>
+<p><code>splice()</code>方法通过删除或替换现有元素或者原地添加新的元素来修改数组，并以数组形式返回被修改的内容。此方法会改变原数组。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.splice(beginIndex, deleteCount, item1, item2, ...)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>beginIndex 修改开始的位置</li>
+<li>deleteCount 要移除的元素个数，可选</li>
+<li>item1, item2, … 要添加进数组的元素，可选</li>
+</ul>
+<h4 id="12-reverse-返回颠倒后的数组"><a class="header-anchor" href="#12-reverse-返回颠倒后的数组">¶</a>12、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse" target="_blank" rel="noopener">reverse()</a> 返回颠倒后的数组</h4>
+<p><code>reverse()</code>方法将数组中元素的位置颠倒，并返回该数组。此方法会改变原数组。</p>
+<h4 id="13-some-返回布尔值"><a class="header-anchor" href="#13-some-返回布尔值">¶</a>13、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/some" target="_blank" rel="noopener">some()</a> 返回布尔值</h4>
 <p><code>some()</code>方法测试数组中是不是至少有一个元素通过了测试函数，返回一个 Boolean 类型的值。</p>
 <blockquote>
 <p><strong>注意</strong></p>
 <ul>
-<li><strong>1、若收到一个空数组，此方法在任何情况下都会返回 false</strong></li>
-<li><strong>2、可接收第二个参数，执行第一个函数时的 this</strong></li>
+<li><strong>若收到一个空数组，此方法在任何情况下都会返回 false</strong></li>
 </ul>
 </blockquote>
-<h4 id="17-splice"><a class="header-anchor" href="#17-splice">¶</a>17、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/splice" target="_blank" rel="noopener">splice()</a></h4>
-<p><code>splice()</code>方法通过删除或替换现有元素或者原地添加新的元素来修改数组，并以数组形式返回被修改的内容。此方法会改变原数组。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.splice(beginIndex, deleteCount, item1, item2, ...)</span><br></pre></td></tr></table></figure>
-<h4 id="18-reverse"><a class="header-anchor" href="#18-reverse">¶</a>18、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse" target="_blank" rel="noopener">reverse()</a></h4>
-<p><code>reverse()</code>方法将数组中元素的位置颠倒，并返回该数组。此方法会改变原数组。</p>
+<h4 id="14-every-返回布尔值"><a class="header-anchor" href="#14-every-返回布尔值">¶</a>14、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/every" target="_blank" rel="noopener">every()</a> 返回布尔值</h4>
+<p><code>every()</code>方法测试数组内的所有元素是否都能通过某个指定函数的测试。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr1 = [<span class="number">12</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">130</span>, <span class="number">44</span>]</span><br><span class="line"><span class="keyword">let</span> arr2 = [<span class="number">12</span>, <span class="number">54</span>, <span class="number">18</span>, <span class="number">130</span>, <span class="number">44</span>]</span><br><span class="line"><span class="keyword">let</span> arr3 = [<span class="number">12</span>, <span class="number">54</span>, <span class="number">18</span>, <span class="number">130</span>, <span class="number">44</span>]</span><br><span class="line"></span><br><span class="line">arr1.every(<span class="function"><span class="params">i</span> =&gt;</span> i &gt;= <span class="number">10</span>)            <span class="comment">// false</span></span><br><span class="line">arr2.every(<span class="function"><span class="params">i</span> =&gt;</span> i &gt;= <span class="number">10</span>)            <span class="comment">// true</span></span><br><span class="line">arr3.every(<span class="function">(<span class="params">i, index, array</span>) =&gt;</span> &#123; <span class="keyword">return</span> i &gt;= <span class="number">20</span> &#125;)            <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>注意</strong></p>
+<ul>
+<li><strong>若收到一个空数组，此方法在任何情况下都会返回 true</strong></li>
+</ul>
+</blockquote>
+<h4 id="15-includes-返回布尔值"><a class="header-anchor" href="#15-includes-返回布尔值">¶</a>15、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/includes" target="_blank" rel="noopener">includes()</a> 返回布尔值</h4>
+<p><code>includes()</code>方法用来判断一个数组是否包含一个指定的值。</p>
+<h4 id="16-indexof-返回索引值"><a class="header-anchor" href="#16-indexof-返回索引值">¶</a>16、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf" target="_blank" rel="noopener">indexOf()</a> 返回索引值</h4>
+<p><code>indexOf()</code>方法返回在数组中可以找到给定元素的第一个索引，如果不存在，则返回 -1。</p>
+<h4 id="17-join-返回新字符串"><a class="header-anchor" href="#17-join-返回新字符串">¶</a>17、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/join" target="_blank" rel="noopener">join()</a> 返回新字符串</h4>
+<p><code>join()</code>方法将一个数组（或一个类数组对象）的所有元素连接成一个字符串并返回这个字符串。</p>
+<h4 id="18-flat-返回新数组"><a class="header-anchor" href="#18-flat-返回新数组">¶</a>18、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/flat" target="_blank" rel="noopener">flat()</a> 返回新数组</h4>
+<p><code>flat()</code>方法会按照一个可指定的深度递归遍历数组，并将所有元素与遍历到的子数组中的元素合并为一个新数组返回。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]]</span><br><span class="line">arr1.flat()             <span class="comment">// [1, 2, 3, 4]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr2 = [<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>, [<span class="number">5</span>, <span class="number">6</span>]]]</span><br><span class="line">arr2.flat()             <span class="comment">// [1, 2, 3, 4, [5, 6]]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr3 = [<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>, [<span class="number">5</span>, <span class="number">6</span>]]]</span><br><span class="line">arr3.flat(<span class="number">2</span>)            <span class="comment">// [1, 2, 3, 4, 5, 6]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//使用 Infinity，可展开任意深度的嵌套数组</span></span><br><span class="line"><span class="keyword">let</span> arr4 = [<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>, [<span class="number">5</span>, <span class="number">6</span>, [<span class="number">7</span>, <span class="number">8</span>, [<span class="number">9</span>, <span class="number">10</span>]]]]]</span><br><span class="line">arr4.flat(<span class="literal">Infinity</span>)     <span class="comment">// [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr5 = [<span class="number">1</span>, <span class="number">2</span>, , <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">arr4.flat()             <span class="comment">// [1, 2, 4, 5]</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -815,11 +805,11 @@ window.onload = function() {
   <script src="https://cdn.bootcss.com/sweetalert/2.1.2/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.css">
 
-  <p><span>随笔标题:</span>JavaScript 中常见的一些方法</p>
+  <p><span>随笔标题:</span>JavaScript 中一些常见的方法</p>
   <p><span>随笔作者:</span>刘先玉</p>
   <p><span>发布时间:</span>2019年11月30日 - 13:43:38</p>
   <p><span>最后更新:</span>2019年11月30日 - 13:43:38</p>
-  <p><span>原文链接:</span><a href="/article/js-functions.html" title="JavaScript 中常见的一些方法">http://liuxianyu.cn/article/js-functions.html</a>
+  <p><span>原文链接:</span><a href="/article/js-functions.html" title="JavaScript 中一些常见的方法">http://liuxianyu.cn/article/js-functions.html</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://liuxianyu.cn/article/js-functions.html" aria-label="复制成功！"></i></span>
   </p>
   <!-- <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p> -->
@@ -1335,7 +1325,7 @@ window.onload = function() {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#介绍"><span class="nav-text">¶介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-string-对象"><span class="nav-text">¶一、String 对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-indexof"><span class="nav-text">¶1、indexOf()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-includes"><span class="nav-text">¶2、includes()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-replace"><span class="nav-text">¶3、replace()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-slice"><span class="nav-text">¶4、slice()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-split"><span class="nav-text">¶5、split()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-substr"><span class="nav-text">¶6、substr()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-substring"><span class="nav-text">¶7、substring()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-array-对象"><span class="nav-text">¶二、Array 对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-isarray"><span class="nav-text">¶1、isArray()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-concat"><span class="nav-text">¶2、concat()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-every"><span class="nav-text">¶3、every()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-filter"><span class="nav-text">¶4、filter()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-flat"><span class="nav-text">¶5、flat()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-foreach"><span class="nav-text">¶6、forEach()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-includes"><span class="nav-text">¶7、includes()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-indexof"><span class="nav-text">¶8、indexOf()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-join"><span class="nav-text">¶9、join()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-map"><span class="nav-text">¶10、map()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-pop"><span class="nav-text">¶11、pop()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-push"><span class="nav-text">¶12、push()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13-shift"><span class="nav-text">¶13、shift()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14-unshift"><span class="nav-text">¶14、unshift()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15-slice"><span class="nav-text">¶15、slice()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#16-some"><span class="nav-text">¶16、some()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#17-splice"><span class="nav-text">¶17、splice()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#18-reverse"><span class="nav-text">¶18、reverse()</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#介绍"><span class="nav-text">¶介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-string-对象"><span class="nav-text">¶一、String 对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-indexof-返回索引值"><span class="nav-text">¶1、indexOf() 返回索引值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-includes-返回布尔值"><span class="nav-text">¶2、includes() 返回布尔值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-split-返回-array"><span class="nav-text">¶3、split() 返回 Array</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-replace-返回新字符串-不改变原字符串"><span class="nav-text">¶4、replace() 返回新字符串，不改变原字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-slice-返回新字符串-不改变原字符串"><span class="nav-text">¶5、slice() 返回新字符串，不改变原字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-substring-返回新字符串"><span class="nav-text">¶6、substring() 返回新字符串</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-array-对象"><span class="nav-text">¶二、Array 对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-isarray-返回布尔值"><span class="nav-text">¶1、isArray() 返回布尔值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-concat-返回新数组-不改变原数组"><span class="nav-text">¶2、concat() 返回新数组，不改变原数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-filter-返回新数组"><span class="nav-text">¶3、filter() 返回新数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-map-返回新数组"><span class="nav-text">¶4、map() 返回新数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-pop-返回从数组中删除的元素-数组为空时返回-undefined"><span class="nav-text">¶5、pop() 返回从数组中删除的元素（数组为空时返回 undefined）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-push-返回数组新的-length"><span class="nav-text">¶6、push() 返回数组新的 length</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-shift-返回从数组中删除的元素-数组为空时返回-undefined"><span class="nav-text">¶7、shift() 返回从数组中删除的元素（数组为空时返回 undefined）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-unshift-返回数组新的-length"><span class="nav-text">¶8、unshift() 返回数组新的 length</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-foreach-返回-undefined"><span class="nav-text">¶9、forEach() 返回 undefined</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-slice-返回新数组"><span class="nav-text">¶10、slice() 返回新数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-splice-返回被删除元素组成的数组"><span class="nav-text">¶11、splice() 返回被删除元素组成的数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-reverse-返回颠倒后的数组"><span class="nav-text">¶12、reverse() 返回颠倒后的数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13-some-返回布尔值"><span class="nav-text">¶13、some() 返回布尔值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14-every-返回布尔值"><span class="nav-text">¶14、every() 返回布尔值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15-includes-返回布尔值"><span class="nav-text">¶15、includes() 返回布尔值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#16-indexof-返回索引值"><span class="nav-text">¶16、indexOf() 返回索引值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#17-join-返回新字符串"><span class="nav-text">¶17、join() 返回新字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#18-flat-返回新数组"><span class="nav-text">¶18、flat() 返回新数组</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
